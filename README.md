@@ -3,4 +3,4 @@
 Enhancing Usability and Performance of Symbolic Execution via Fully Automated Parameter Tuning
 
 
-![parasuit](https://github.com/anonymousfse2024/parasuit/assets/150991397/6adf9efa-df74-440e-96b6-07749b350b8a)
+<img src="https://github.com/anonymousfse2024/parasuit/assets/150991397/d405595c-1eb7-4cd9-a100-f30450bf3bb4" width="200", height="200"/>
