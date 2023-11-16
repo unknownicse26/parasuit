@@ -181,7 +181,7 @@ class PVSample:
             else:
                 portion.append(avg_cov2[k] / sum(avg_cov2) + portion[k - 1])
 
-        # Randomly select sampling cluster
+        # Randomly select the sampling cluster
         p = rd.random()
         select_k = 0
 
