@@ -10,6 +10,10 @@ We run ParaSuit with KLEE, one of the most commonly used symbolic execution tool
 
 ### Install KLEE
 We use KLEE-2.1 version on Ubuntu-18.04. So if you want to use the same version of the tool as ours, install KLEE by following the steps in the URL [KLEE-2.1 installation](https://klee.github.io/releases/docs/v2.1/build-llvm60/).
+You have to clone KLEE with following command
+```bash
+git clone -b 2.1.x https://github.com/klee/klee.git
+```
 
 And if you want to use a version different from KLEE-2.1, select the "docs" of desired version from the URL [KLEE Releases](https://klee.github.io/releases/). After selecting the version, click “Getting Started with KLEE
 Install KLEE by following the instructions in the "Build from source (with LLVM *)" category.
