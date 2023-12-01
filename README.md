@@ -83,8 +83,7 @@ If you want to get results about how many branches ParaSuit has covered, run the
 ```
 
 If the command was executed successfully, you will get a graph like the following in a file named "br_result.png".
-<!-- trueprint 결과 이미지 -->
-<img src="https://github.com/anonymousfse2024/parasuit/assets/150991397/d405595c-1eb7-4cd9-a100-f30450bf3bb4" width=30%, height=30%/>
+<img src="https://github.com/anonymousfse2024/parasuit/assets/150991397/1da78ffb-254b-463f-9257-b0f70a38b6e8" width=30%, height=30%/>
 
 
 ### Bug Finding
