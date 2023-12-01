@@ -8,7 +8,7 @@ setup(
     name='parasuit',
     version=__version__,
     description='Parasuit: Enhancing Usability and Performance of Symbolic Execution via Fully Automated Parameter Tuning',
-    python_version='>=3.6',
+    python_version='>=3.9',
     packages=find_packages(include=('parasuit', 'parasuit.*')),
     include_package_data=True,
     setup_requires=[],
