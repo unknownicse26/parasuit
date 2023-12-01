@@ -14,7 +14,6 @@ setup(
     setup_requires=[],
     install_requires=[
         'numpy',
-        'gensim',
         'scikit-learn'
     ],
     dependency_links=[],
