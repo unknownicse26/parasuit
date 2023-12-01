@@ -66,7 +66,7 @@ def graph_generator(time_budget, coverages, labels, name, graph):
         line, = plt.plot(times[c][:-1], results_in_budget[c][:-1], label=labels[c], linestyle=linestyle[c], marker=markers[c], markevery=len(times[c])//10, color=colors[c], markeredgecolor="black", markersize=7)
         plt.plot(times[c][-1], results_in_budget[c][-1], linestyle=linestyle[c], marker=markers[c], color=colors[c], markeredgecolor="black", markersize=7)
 
-    plt.legend(loc="lower right", prop={'size': 18})
+    plt.legend(loc="lower right")
 
     plt.title(name)
     plt.xlabel("time(s)")
@@ -89,8 +89,8 @@ def main(*argv):
                         help='name of benchmark (default=Benchmark)')
     parser.add_argument('--graph', default='br_result.png', type=str, metavar='PATH',
                         help='path to save coverage graph (default=coverage.pdf)')
-    parser.add_argument('--budget', default=3600, type=int, metavar='TIME',
-                        help='time budget of the coverage graph (default=3600(s))')
+    parser.add_argument('--budget', default=43200, type=int, metavar='TIME',
+                        help='time budget of the coverage graph (default=43200(s))')
 
     args = parser.parse_args(argv)
 
