@@ -1,3 +1,0 @@
-[console_scripts]
-parasuit = parasuit.bin:main
-

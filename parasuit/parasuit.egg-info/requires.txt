@@ -1,3 +1,0 @@
-gensim
-numpy
-scikit-learn
