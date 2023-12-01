@@ -28,7 +28,7 @@ $ git clone https://github.com/anonymousfse2024/parasuit.git
 Second, in the "parasuit" directory, build ParaSuit with "setup.py" directory. And then, install the pip packages used to run ParaSuit.
 ```bash
 $ cd parasuit
-/parasuit $ (sudo) python3 setup.py install
+/parasuit $ python3 setup.py install
 /parasuit $ pip3 install numpy gensim scikit-learn
 ```
 
