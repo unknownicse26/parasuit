@@ -79,7 +79,7 @@ You can also run KLEE without any tuning by following command below.
 ### Branch Coverage
 If you want to get results about how many branches ParaSuit has covered, run the following command.
 ```bash
-/parasuit/benchmarks $ python3 report_coverage.py ParaSuit KLEEdefault
+/parasuit/benchmarks $ python3 report_coverage.py ParaSuit KLEEdefault --benchmark trueprint-5.4
 ```
 
 If the command was executed successfully, you will get a graph like the following in a file named "br_result.png".
