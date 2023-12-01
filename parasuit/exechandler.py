@@ -4,7 +4,6 @@ from abc import abstractmethod
 import json
 import random
 
-from parasuit.logger import get_logger
 
 
 class ExecHandler(ABC):
