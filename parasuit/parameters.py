@@ -94,7 +94,7 @@ class KLEEParameters:
 
         self.integer_parameters = [
             ["-max-memory", 2000, None],
-            ["-max-sym-array-size", 0, 0],
+            ["-max-sym-array-size", 4096, 0],
             ["-max-depth", 0, 0],
             ["-allocate-determ-size", 100, None],
             ["-batch-instructions", 10000, None],
