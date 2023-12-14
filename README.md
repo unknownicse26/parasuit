@@ -92,7 +92,7 @@ If you want to check information about what bugs ParaSuit has found, run the fol
 /parasuit/benchmarks $ python3 report_bugs.py ParaSuit
 ```
 
-If the command was executed successfully, you will get a bug table in a file named "bug_result.txt".
+If the command was executed successfully, you will get a bug report in a file named "bug_result.txt".
 
 
 ## Usage
