@@ -29,7 +29,6 @@ Second, in the "parasuit" directory, build ParaSuit with "setup.py" directory. A
 ```bash
 $ cd parasuit
 /parasuit $ python3 setup.py install
-/parasuit $ pip3 install numpy gensim scikit-learn
 ```
 
 Third, with "building_benchmarks.sh" file in the "parasuit/benchmarks" directory, you have to install benchmarks you want to execute. In this instruction, we will use "trueprint-5.4" for example.
