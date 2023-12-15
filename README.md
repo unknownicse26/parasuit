@@ -55,7 +55,7 @@ Then, you will see logs as follows.
 [INFO] ParaSuit : Coverage will be recoreded at "ParaSuit/coverage.csv" at every iteration.
 [INFO] ParaSuit : Selected ParaSuit. Parameter values will be tuned.
 [INFO] ParaSuit : All configuration loaded. Start testing.
-[INFO] ParaSuit : Iteration: 1 Iteration budget: 30 Total budget: 3600 Time Elapsed: 36 Coverage: 348
+[INFO] ParaSuit : Iteration: 1 Iteration budget: 30 Total budget: 43200 Time Elapsed: 36 Coverage: 348
 ```
 
 When time bugdet expired without error, you can see the following output.
