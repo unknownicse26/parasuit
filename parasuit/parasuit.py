@@ -140,7 +140,7 @@ class ParaSuit:
                         parameter_values = self.tuneS.exploit(parameter_values, self.constS.scores)
 
                     except:
-                        parameter_values = self.constS.solver(self.options, parameter_values, score, cov_iter, i, n_total)
+                        parameter_values = self.constS.solver(self.options, parameter_values, score, cov_iter, iteration, n_total)
                         parameter_values = self.tuneSym.randomSymArg(parameter_values)
                         parameter_values = self.tuneSym.randomSymFile(parameter_values)
 
