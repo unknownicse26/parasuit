@@ -20,7 +20,6 @@ class ParaSuit:
     def __init__(self, budget, parameter_values, tuneSize, clust, threshold):
         # Initialize Default Setting Tools
         self.setD = SetMinimum(parameter_values)
-        print("[INFO] ParaSuit : Start defining minimum parameter values.")
         
         self.tuningSize = tuneSize
         self.budget = budget
