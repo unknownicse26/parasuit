@@ -122,6 +122,32 @@ In the JSON file used as the value of --parameter-values, there are two entries:
 | `llvm_bc` | LLVM bitecode file for klee |
 | `gcov_obj` | Executable with gcov support |
 
+## Usage of Other Programs
+### /benchmarks/report_bugs.py
+```
+/parasuit/benchmarks$ python3 report_bugs.py --help
+usage: report_bugs.py [-h] [--benchmark STR] [--table PATH] [DIRS ...]
+```
+| Option | Description |
+|:------:|:------------|
+| `-h, --help`  | Show this help message and exit |
+| `DIRS`        | Name of directory to detect bugs |
+| `--benchmark` | Name of benchmark & verison |
+| `--table`     | Path to save bug table graph |
+
+
+### /benchmarks/report_coverage.py
+```
+/parasuit/benchmarks$ python3 report_coverage.py --help
+usage: report_coverage.py [-h] [--benchmark STR] [--graph PATH] [--budget TIME] [DIRS ...]
+```
+| Option | Description |
+|:------:|:------------|
+| `-h, --help`  | Show help message and exit |
+| `DIRS`        | Names of directories to draw figure |
+| `--benchmark` | Name of benchmark & verison |
+| `--graph`     | Path to save coverage graph |
+| `--budget`    | Time budget of the coverage graph |
 
 
 ## Source Code Structure
