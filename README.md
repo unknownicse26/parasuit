@@ -66,17 +66,17 @@ If you want to get results about how many branches ParaSuit has covered, run the
 /parasuit/benchmarks $ python3 report_coverage.py ParaSuit KLEEdefault --benchmark grep-3.4
 ```
 
-If the command was executed successfully, you would get a graph like the following in a file named "coverage_result.png".
+If the command is executed successfully, you will get a graph like the following in a file named "coverage_result.png".
 <img src="https://github.com/anonymousfse2024/parasuit/assets/150991397/1da78ffb-254b-463f-9257-b0f70a38b6e8" width=30%, height=30%/>
 
 
 ### Bug Finding
 If you want to check information about what bugs ParaSuit has found, run the following command.
 ```bash
-/parasuit/benchmarks $ python3 report_bugs.py ParaSuit
+/parasuit/benchmarks $ python3 report_bugs.py --benchmark grep-3.4 ParaSuit
 ```
 
-If the command was executed successfully, you would get a bug report in a file named "bug_result.txt".
+If the command is executed successfully, you will get a bug report in a file named "bug_result.txt".
 
 
 ## Usage
