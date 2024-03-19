@@ -82,3 +82,6 @@ RUN python3 setup.py install
 # Install Benchmarks (e.g. grep-3.4)
 WORKDIR ${BASE_DIR}/parasuit/benchmarks
 RUN bash building_benchmark.sh grep-3.4
+
+# Initiating Starting Directory
+WORKDIR ${BASE_DIR}/parasuit/benchmarks
