@@ -77,6 +77,15 @@ If you want to check information about what bugs ParaSuit has found, run the fol
 ```
 
 If the command is executed successfully, you will get a bug report in a file named "bug_result.txt".
+```bash
+/parasuit/benchmarks $ cat bug_result.txt
+# Example from gcal-4.1
+TestCase : /ParaSuit/iteration-11/test000007.ktest
+Arguments : "./gcal" "   " "   " "@/" "- " "@-" 
+CRASHED signal 11
+File: ../../src/file-io.c
+Line: 740
+```
 
 
 ## Usage
