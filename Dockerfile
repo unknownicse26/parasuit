@@ -79,9 +79,9 @@ RUN git clone https://github.com/anonymousicse2025/parasuit.git
 WORKDIR ${BASE_DIR}/parasuit
 RUN python3 setup.py install
 
-# Install Benchmarks (e.g. trueprint-5.4)
+# Install Benchmarks (e.g. grep-3.4)
 WORKDIR ${BASE_DIR}/parasuit/benchmarks
-RUN bash building_benchmark.sh trueprint-5.4
+RUN bash building_benchmark.sh grep-3.4
 
 # Initiating Starting Directory
-WORKDIR ${BASE_DIR}
+WORKDIR ${BASE_DIR}/parasuit
