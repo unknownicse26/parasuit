@@ -26,7 +26,7 @@ Third, connect to Docker using the command below. The command will take you to a
 ### Run ParaSuit
 Finally, you can run ParaSuit with the following code. (e.g. grep-3.4) We provide the optimal parameter set provided by [KLEE](https://klee-se.org/docs/coreutils-experiments/) as initial parameter values.
 ```bash
-/parasuit/benchmarks $ parasuit -t 43200 -p initial_values.json -d ParaSuit grep-3.4/obj-llvm/src/grep.bc grep-3.4/obj-gcov/src/grep
+/parasuit/benchmarks $ parasuit -t 30000 -p initial_values.json -d ParaSuit grep-3.4/obj-llvm/src/grep.bc grep-3.4/obj-gcov/src/grep
 ```
 Format : parasuit -t <time_budget> -p <json_file> -d <output_dir> <path_to_bc_file(llvm)> <path_to_exec_file(gcov)>
 + -t : Time Budget (seconds)
@@ -39,7 +39,7 @@ Then, you will see logs as follows.
 [INFO] ParaSuit : Coverage will be recorded at "ParaSuit/coverage.csv" at every iteration.
 [INFO] ParaSuit : Selected ParaSuit. Parameters will be tuned.
 [INFO] ParaSuit : All configuration loaded. Start testing.
-[INFO] ParaSuit : Iteration: 1 Iteration budget: 30 Total budget: 43200 Time Elapsed: 42 Coverage: 1364
+[INFO] ParaSuit : Iteration: 1 Iteration budget: 30 Total budget: 30000 Time Elapsed: 42 Coverage: 1364
 ```
 
 When the time budget expires without error, you can see the following output.
@@ -55,7 +55,7 @@ When the time budget expires without error, you can see the following output.
 ### Run KLEE Default
 You can also run KLEE without any tuning by following the command below.
 ```bash
-/parasuit/benchmarks $ parasuit -t 43200 -d KLEEdefault --tool klee grep-3.4/obj-llvm/src/grep.bc grep-3.4/obj-gcov/src/grep
+/parasuit/benchmarks $ parasuit -t 30000 -d KLEEdefault --tool klee grep-3.4/obj-llvm/src/grep.bc grep-3.4/obj-gcov/src/grep
 ```
 
 
