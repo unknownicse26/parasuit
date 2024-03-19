@@ -3,7 +3,7 @@
 Using ParaSuit, you can install 12 benchmarks
 
 | Benchmark | version | Benchmark | version | Benchmark | version |
-|:------:|:------------|:------:|:------------|:------:|:------------|
+|:------:|:------:|:------:|:------:|:------:|:------:|
 | combine   | 0.4.0 | gawk      | 5.1.0  | nano         | 4.9   |
 | diff      | 3.7   | gcal      | 4.1    | sed          | 4.8   |
 | du        | 8.32  | grep      | 3.4    | trueprint    | 5.4   |
