@@ -38,7 +38,7 @@ def main(argv=None):
     hyperparameters.add_argument('--iteration-time-budget', default=120, type=int, metavar='INT',
                                  help='Time budget for each iteration (default=120)')
     hyperparameters.add_argument('--threshold', default=0.6, type=float, metavar='FLOAT',
-                                 help='Threshold to group parameters into one group in the parameter selection step (default=0.6 -> 60 Groups)')
+                                 help='Threshold to group parameters into a group in the parameter selection step (default=0.6 -> 60 Groups)')
     hyperparameters.add_argument('--n-tune', default=3, type=int, metavar='INT',
                                  help='Number of times each parameter is compared in the parameter selection step (default=3)')
     hyperparameters.add_argument('--clust-range', default=10, type=int, metavar='INT',
