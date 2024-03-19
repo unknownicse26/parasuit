@@ -76,7 +76,7 @@ def main(argv=None):
     output_dir.mkdir(parents=True)
     coverage_csv = output_dir / 'coverage.csv'
     coverage_csv.touch()
-    print(f'[INFO] ParaSuit : Coverage will be recoreded at "{coverage_csv}" at every iteration.')
+    print(f'[INFO] ParaSuit : Coverage will be recorded at "{coverage_csv}" at every iteration.')
 
     # Initialize Symbolic Executor
     symbolic_executor = KLEE(args.klee)
