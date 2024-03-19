@@ -48,9 +48,9 @@ def log_err_replays(fd_name, err_file, program, src):
 
     for rp in err_file:
         if src == None:
-            os.chdir("./%s/obj-gcov1/" % (program))
+            os.chdir("./%s/obj-gcov/" % (program))
         else:
-            os.chdir("./%s/obj-gcov1/%s/" % (program, src)) 
+            os.chdir("./%s/obj-gcov/%s/" % (program, src)) 
 
         hypen = rp.find('-')
         idx = rp.find('.')
