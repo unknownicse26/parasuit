@@ -46,8 +46,8 @@ def main(argv=None):
 
 
     # Others
-    parser.add_argument('-d', '--output-dir', default='parasuit-result', type=str,
-                        help='Directory where experiment results are saved (default=parasuit-result)')
+    parser.add_argument('-d', '--output-dir', default='ParaSuit', type=str,
+                        help='Directory where experiment results are saved (default=ParaSuit)')
     parser.add_argument('--gcov-depth', default=1, type=int,
                         help='Depth from the obj-gcov directory to the directory where the gcov file was created (default=1)')
     parser.add_argument('--tool', default='parasuit', type=str,
