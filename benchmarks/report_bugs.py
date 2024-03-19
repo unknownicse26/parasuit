@@ -48,9 +48,9 @@ def log_err_replays(fd_name, err_file, program, src):
     exec_f = program[:idx_p]
 
     if src == None:
-        os.chdir("./%s/obj-gcov1/" % (program))     # 나중에 1 지우기
+        os.chdir("./%s/obj-gcov/" % (program))
     else:
-        os.chdir("./%s/obj-gcov1/%s/" % (program, src))     # 나중에 1 지우기
+        os.chdir("./%s/obj-gcov/%s/" % (program, src))
 
     for rp in err_file:
         hypen = rp.find('-')
@@ -105,7 +105,6 @@ def extract_crash_tc(fd_name, table):
                 idx_cr_end = crashed_sig.find('(')
                 crash_signal = crashed_sig[idx_cr_start:idx_cr_end - 1]
                 
-                # 에러 파일 열기
                 tc_idx = tc_path.find("test")
                 tc_idx_e = tc_path.find(".ktest")
                 path_dir = tc_path[:tc_idx]
