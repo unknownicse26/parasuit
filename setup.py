@@ -7,7 +7,7 @@ from parasuit import __version__
 setup(
     name='parasuit',
     version=__version__,
-    description='Parasuit: Enhancing Usability and Performance of Symbolic Execution via Fully Automated Parameter Tuning',
+    description='Parasuit: Full Automation of External Parameter Tuning for Symbolic Execution',
     python_version='>=3.9',
     packages=find_packages(include=('parasuit', 'parasuit.*')),
     include_package_data=True,
