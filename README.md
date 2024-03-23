@@ -39,7 +39,7 @@ Then, you will see logs as follows.
 [INFO] ParaSuit : Coverage will be recorded at "ParaSuit/coverage.csv" at every iteration.
 [INFO] ParaSuit : Selected ParaSuit. Parameters will be tuned.
 [INFO] ParaSuit : All configuration loaded. Start testing.
-[INFO] ParaSuit : Iteration: 1 Iteration budget: 30 Total budget: 30000 Time Elapsed: 41 Coverage: 1346
+[INFO] ParaSuit : Iteration: 1 Iteration budget: 30 Total budget: 36000 Time Elapsed: 41 Coverage: 1346
 ```
 
 When the time budget expires without error, you can see the following output.
