@@ -139,7 +139,10 @@ class KLEEParameters:
             ["-solver-backend", "stp", ["stp", "metasmt", "dummy", "z3"]],
             ["-sym-stdout", "off", ["on", "off"]],
             ["-debug-crosscheck-core-solver", "none", ["none", "stp", "metasmt", "dummy", "z3"]],
-            ["-libc", "none", ["none", "klee", "uclibc"]]
+            ["-libc", "none", ["none", "klee", "uclibc"]],
+            ["-debug-print-instructions", "all:stderr", ["all:stderr", "src:stderr", "compact:stderr", "all:file", "src:file", "compact:file"]],
+            ["-exit-on-error-type", "User", ["Abort", "Assert", "BadVectorAccess", "Exec", "External", "Free", "Model", "Overflow", "Ptr", "ReadOnly", "ReportError", "User", "Unhandled"]],
+            ["-optimize-array", "all", ["all", "index", "value"]]
         ]
 
         self.totalParams = self.boolean_parameters + self.integer_parameters + self.float_parameters + self.stringTime_parameters + self.string_parameters
@@ -168,7 +171,7 @@ class KLEEParameters:
             '-return-null-on-zero-malloc': "Returns NULL if malloc(0) is called", 
             '-suppress-external-warnings': "Supress warnings about calling external functions.", 
             '-exit-on-error': "Exit KLEE if an error in the tested application has been found", 
-            '-dump-states-on-halt': "Dump test cases for all active states on exit", 
+            '-dump-states-on-halt': "Dump test cases for all active states on halt", 
             '-use-incomplete-merge': "Heuristic-based path merging", 
             '-track-instruction-time': "Enable tracking of time for individual instructions", 
             '-use-independent-solver': "Use constraint independence", 
@@ -266,9 +269,11 @@ class KLEEParameters:
             '-smtlib-abbreviation-mode': "Choose abbreviation mode to use in SMT-LIBv2 files", 
             '-smtlib-display-constants': "Sets how bitvector constants are written in generated SMT-LIBv2 files", 
             '-use-query-log': "Log queries to a file. Multiple options can be specified separated by a comma. By default nothing is logged.", 
-            '-optimize-array': "Optimize accesses to either concrete or concrete/symbolic arrays.", 
             '-solver-backend': "Specifiy the core solver backend to use", 
             '-debug-crosscheck-core-solver': "Specifiy a solver to use for crosschecking the results of the core solver", 
             '-libc': "Choose libc version (none by default)",
-            '-sym-stdout': "On/Off symbolic output."
+            '-sym-stdout': "On/Off symbolic output.",
+            '-debug-print-instructions': "Log instructions during execution.",
+            '-exit-on-error-type': "Stop execution after reaching a specified condition (default=false).",
+            '-optimize-array': "Optimize accesses to either concrete or concrete/symbolic arrays (default=false)."  
         }
