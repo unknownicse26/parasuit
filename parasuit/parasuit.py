@@ -74,6 +74,7 @@ class ParaSuit:
                 if not self.startCollect:
                     parameter_values = self.init_sampleV(elapsed, parameter_values)
                     self.startCollect = 1
+                    print("[INFO] ParaSuit : Start parameter value sampling stage.")
 
                 self.collect.scores.append(score)
                 self.collect.branches.append(cov_iter)
@@ -115,7 +116,6 @@ class ParaSuit:
                                 self.tuneS.save(parameter_values)
 
                 else:
-                    print("[INFO] ParaSuit : Start cluster & update stages.")
                     try:
                         # Clustering with data.
                         self.clust_flag += 1
