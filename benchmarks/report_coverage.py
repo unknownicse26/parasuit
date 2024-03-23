@@ -60,7 +60,7 @@ def graph_generator(time_budget, coverages, labels, name, graph):
     for result in coverages:
         cov = result[:time_budget]
         results_in_budget.append(cov)
-        times.append([i for i in range(len(cov))])
+        times.append([i / 3600 for i in range(len(cov))])
     
     for c in range(len(results_in_budget)):
         line, = plt.plot(times[c][:-1], results_in_budget[c][:-1], label=labels[c], linestyle=linestyle[c], marker=markers[c], markevery=len(times[c])//10, color=colors[c], markeredgecolor="black", markersize=7)
@@ -69,7 +69,7 @@ def graph_generator(time_budget, coverages, labels, name, graph):
     plt.legend(loc="lower right")
 
     plt.title(name)
-    plt.xlabel("time(s)")
+    plt.xlabel("time(h)")
     plt.ylabel("The Number of Covered Branches")
     plt.tick_params(axis='both')
 
@@ -89,8 +89,8 @@ def main(*argv):
                         help='name of benchmark (default=Benchmark)')
     parser.add_argument('--graph', default='coverage_result.png', type=str, metavar='PATH',
                         help='path to save coverage graph (default=coverage_result.png)')
-    parser.add_argument('--budget', default=43200, type=int, metavar='TIME',
-                        help='time budget of the coverage graph (default=43200(s))')
+    parser.add_argument('--budget', default=36000, type=int, metavar='TIME',
+                        help='time budget of the coverage graph (default=36000(s))')
 
     args = parser.parse_args(argv)
 
