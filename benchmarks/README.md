@@ -3,7 +3,7 @@
 Using ParaSuit, you can install 12 benchmarks
 
 | Benchmark | version | Benchmark | version | Benchmark | version |
-|:------:|:------:|:------:|:------:|:------:|:------:|
+|:------:|:------------|:------:|:------------|:------:|:------------|
 | combine   | 0.4.0 | gawk      | 5.1.0  | nano         | 4.9   |
 | diff      | 3.7   | gcal      | 4.1    | sed          | 4.8   |
 | du        | 8.32  | grep      | 3.4    | trueprint    | 5.4   |
@@ -47,8 +47,14 @@ ParaSuit provides two versions of initial parameter values.
 | initial_values.json   | Since most researches using KLEE use the parameter values on the [KLEE website](https://klee-se.org/docs/coreutils-experiments/), ParaSuit also basically uses the same values as initial parameter values. |
 | optimal.json      | This file only includes parameters frequently selected as the minimal parameter values, which is crucial for the symbolic execution tool to function correctly, were defined. Using these parameter values, you can shorten the time in the process of extracting minimum parameter values. | 
 
-If you want to use something other than the two initial parameter values presented by ParaSuit, you can modify the items in the 'default' dictionary in the json file.
-
+If you want to use something other than the two initial parameter values presented by ParaSuit, you can modify the JSON file.
++ To define symbolic parameters, input the parameter and its value into the 'space' dictionary within the JSON file.
+    + Symbolic parameter : -sym-arg, -sym-files, -sym-stdin
+    + If your initial parameter values use sym-args rather than sym-arg, define '"-sym-arg": [[MIN, MIN+1, ... , MAX-1, MAX], N]'
+    + -sym-args [MIN] [MAX] [N] : Replace by at least MIN arguments and at most MAX arguments, each with maximum length N.
++ To define parameters other than symbolic parameters, enter the parameter and its value in the 'default' dictionary in the JSON file.
+    + If you want to express "true" value in JSON file, you can also use 'null'.
++ If you want to use seeding, add '"-seed-file": [[], 1]' to the space dictionary.
 
 ## Analyzing Results
 ### Branch Coverage
