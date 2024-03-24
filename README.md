@@ -44,12 +44,12 @@ Then, you will see logs as follows.
 
 When the time budget expires without error, you can see the following output.
 ```bash
-[INFO] ParaSuit : Iteration: 365 Iteration budget: 120 Total budget: 43200 Time Elapsed: 42747 Coverage: 879
-[INFO] ParaSuit : Iteration: 366 Iteration budget: 120 Total budget: 43200 Time Elapsed: 42912 Coverage: 879
-[INFO] ParaSuit : Iteration: 367 Iteration budget: 120 Total budget: 43200 Time Elapsed: 43065 Coverage: 879
-[INFO] ParaSuit : Iteration: 368 Iteration budget: 120 Total budget: 43200 Time Elapsed: 43069 Coverage: 879
-[INFO] ParaSuit : Iteration: 369 Iteration budget: 120 Total budget: 43200 Time Elapsed: 43234 Coverage: 879
-[INFO] ParaSuit : ParaSuit done. Achieve 879 coverage
+[INFO] ParaSuit : Iteration: 264 Iteration budget: 120 Total budget: 36000 Time Elapsed: 35344 Coverage: 3389 
+[INFO] ParaSuit : Iteration: 265 Iteration budget: 120 Total budget: 36000 Time Elapsed: 35510 Coverage: 3389 
+[INFO] ParaSuit : Iteration: 266 Iteration budget: 120 Total budget: 36000 Time Elapsed: 35717 Coverage: 3389 
+[INFO] ParaSuit : Iteration: 267 Iteration budget: 120 Total budget: 36000 Time Elapsed: 35886 Coverage: 3389 
+[INFO] ParaSuit : Iteration: 268 Iteration budget: 114 Total budget: 36000 Time Elapsed: 36060 Coverage: 3389 
+[INFO] ParaSuit : ParaSuit done. Achieve 3389 coverage.
 ```
 
 ### Run KLEE Default
