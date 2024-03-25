@@ -67,8 +67,7 @@ If you want to get results about how many branches ParaSuit has covered, run the
 ```
 
 If the command is executed successfully, you will get a graph like the following in a file named "coverage_result.png".
-<img src="https://github.com/anonymousfse2024/parasuit/assets/150991397/1da78ffb-254b-463f-9257-b0f70a38b6e8" width=30%, height=30%/>
-
+<img src="https://github.com/anonymousicse2025/parasuit/assets/150991397/525cf702-e7e5-4152-84fb-6c19661db64b" width=30%, height=30%/>
 
 ### Bug Finding
 If you want to check information about what bugs ParaSuit has found, run the following command.
