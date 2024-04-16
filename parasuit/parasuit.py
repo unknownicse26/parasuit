@@ -7,7 +7,7 @@ from parasuit.parameters import KLEEParameters
 from parasuit.grouping import Grouping
 from parasuit.paramselect import PSelect
 
-# Parameter Space Selecting
+# Parameter Value Sampling
 from parasuit.symparams import SymParams
 from parasuit.errcheck import errHandler
 from parasuit.collect import Collect
