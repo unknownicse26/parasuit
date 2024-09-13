@@ -2,14 +2,14 @@
 
 Full Automation of External Parameter Tuning for Symbolic Execution
 
-<img src="https://github.com/anonymousfse2024/parasuit/assets/150991397/d405595c-1eb7-4cd9-a100-f30450bf3bb4" width=30%, height=30%/>
+<img src="https://github.com/unknownfse25/parasuit/assets/150991397/d405595c-1eb7-4cd9-a100-f30450bf3bb4" width=30%, height=30%/>
 
 
 
 ### Build ParaSuit
 First, you have to clone our source code. 
 ```bash
-$ git clone https://github.com/anonymousicse2025/parasuit.git
+$ git clone https://github.com/unknownfse25/parasuit.git
 ```
 
 Second, build ParaSuit with Dockerfile. If you run the command below, ParaSuit and KLEE-2.1 will be built, and a benchmark (grep-3.4) will be installed.
@@ -67,7 +67,7 @@ If you want to get results about how many branches ParaSuit has covered, run the
 ```
 
 If the command is executed successfully, you will get a graph like the following in a file named "coverage_result.png".
-<img src="https://github.com/anonymousicse2025/parasuit/assets/150991397/525cf702-e7e5-4152-84fb-6c19661db64b" width=30%, height=30%/>
+<img src="https://github.com/unknownfse25/parasuit/assets/150991397/525cf702-e7e5-4152-84fb-6c19661db64b" width=30%, height=30%/>
 
 ### Bug Finding
 If you want to check information about what bugs ParaSuit has found, run the following command.
