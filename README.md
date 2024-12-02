@@ -1,15 +1,15 @@
 # ParaSuit
 
-Fully Automated and Program-Adaptive Parameter Tuning for Symbolic Execution
+Enhancing Usability and Performance of Symbolic Execution via Fully Automated Parameter Tuning
 
-<img src="https://github.com/unknownfse25/parasuit/assets/150991397/d405595c-1eb7-4cd9-a100-f30450bf3bb4" width=30%, height=30%/>
+<img src="https://github.com/anonymousfse2024/parasuit/assets/150991397/d405595c-1eb7-4cd9-a100-f30450bf3bb4" width=30%, height=30%/>
 
 
 
 ### Build ParaSuit
 First, you have to clone our source code. 
 ```bash
-$ git clone https://github.com/unknownfse25/parasuit.git
+$ git clone https://github.com/anonymousicse2025/parasuit.git
 ```
 
 Second, build ParaSuit with Dockerfile. If you run the command below, ParaSuit and KLEE-2.1 will be built, and a benchmark (grep-3.4) will be installed.
@@ -24,38 +24,37 @@ Third, connect to Docker using the command below. The command will take you to a
 ```
 
 ### Run ParaSuit
-Finally, you can run ParaSuit with the following code. (e.g. grep-3.4) We provide the optimal parameter set provided by [KLEE](https://klee-se.org/docs/coreutils-experiments/) as initial parameter values.
+Finally, you can run ParaSuit with following code. (e.g. grep-3.4) We provide the optimal parameter set provided by [KLEE](https://klee-se.org/docs/coreutils-experiments/) as initial parameter values.
 ```bash
-/parasuit/benchmarks $ parasuit -t 36000 -p initial_values.json -d ParaSuit grep-3.4/obj-llvm/src/grep.bc grep-3.4/obj-gcov/src/grep
+/parasuit/benchmarks $ parasuit -t 43200 -p initial_values.json -d ParaSuit grep-3.4/obj-llvm/src/grep.bc grep-3.4/obj-gcov/src/grep
 ```
 Format : parasuit -t <time_budget> -p <json_file> -d <output_dir> <path_to_bc_file(llvm)> <path_to_exec_file(gcov)>
 + -t : Time Budget (seconds)
 + -p : Initial Parameter Values (.json file)
 + -d : Output Directory
 
-
 Then, you will see logs as follows.
 ```bash
-[INFO] ParaSuit : Coverage will be recorded at "ParaSuit/coverage.csv" at every iteration.
+[INFO] ParaSuit : Coverage will be recoreded at "ParaSuit/coverage.csv" at every iteration.
 [INFO] ParaSuit : Selected ParaSuit. Parameters will be tuned.
 [INFO] ParaSuit : All configuration loaded. Start testing.
-[INFO] ParaSuit : Iteration: 1 Iteration budget: 30 Total budget: 36000 Time Elapsed: 41 Coverage: 1346
+[INFO] ParaSuit : Iteration: 1 Iteration budget: 30 Total budget: 43200 Time Elapsed: 42 Coverage: 1364
 ```
 
-When the time budget expires without error, you can see the following output.
+When time bugdet expired without error, you can see the following output.
 ```bash
-[INFO] ParaSuit : Iteration: 264 Iteration budget: 120 Total budget: 36000 Time Elapsed: 35344 Coverage: 3389 
-[INFO] ParaSuit : Iteration: 265 Iteration budget: 120 Total budget: 36000 Time Elapsed: 35510 Coverage: 3389 
-[INFO] ParaSuit : Iteration: 266 Iteration budget: 120 Total budget: 36000 Time Elapsed: 35717 Coverage: 3389 
-[INFO] ParaSuit : Iteration: 267 Iteration budget: 120 Total budget: 36000 Time Elapsed: 35886 Coverage: 3389 
-[INFO] ParaSuit : Iteration: 268 Iteration budget: 114 Total budget: 36000 Time Elapsed: 36060 Coverage: 3389 
-[INFO] ParaSuit : ParaSuit done. Achieve 3389 coverage.
+[INFO] ParaSuit : Iteration: 365 Iteration budget: 120 Total budget: 43200 Time Elapsed: 42747 Coverage: 879
+[INFO] ParaSuit : Iteration: 366 Iteration budget: 120 Total budget: 43200 Time Elapsed: 42912 Coverage: 879
+[INFO] ParaSuit : Iteration: 367 Iteration budget: 120 Total budget: 43200 Time Elapsed: 43065 Coverage: 879
+[INFO] ParaSuit : Iteration: 368 Iteration budget: 120 Total budget: 43200 Time Elapsed: 43069 Coverage: 879
+[INFO] ParaSuit : Iteration: 369 Iteration budget: 120 Total budget: 43200 Time Elapsed: 43234 Coverage: 879
+[INFO] ParaSuit : ParaSuit done. Achieve 879 coverage
 ```
 
 ### Run KLEE Default
-You can also run KLEE without any tuning by following the command below.
+You can also run KLEE without any tuning by following command below.
 ```bash
-/parasuit/benchmarks $ parasuit -t 36000 -d KLEEdefault --tool klee grep-3.4/obj-llvm/src/grep.bc grep-3.4/obj-gcov/src/grep
+/parasuit/benchmarks $ parasuit -t 43200 -d KLEEdefault --tool klee trueprint-5.4/obj-llvm/src/trueprint.bc trueprint-5.4/obj-gcov/src/trueprint
 ```
 
 
@@ -63,28 +62,20 @@ You can also run KLEE without any tuning by following the command below.
 ### Branch Coverage
 If you want to get results about how many branches ParaSuit has covered, run the following command.
 ```bash
-/parasuit/benchmarks $ python3 report_coverage.py --benchmark grep-3.4 ParaSuit KLEEdefault 
+/parasuit/benchmarks $ python3 report_coverage.py ParaSuit KLEEdefault --benchmark trueprint-5.4
 ```
 
-If the command is executed successfully, you will get a graph like the following in a file named "coverage_result.png".
-<img src="https://github.com/unknownfse25/parasuit/assets/150991397/525cf702-e7e5-4152-84fb-6c19661db64b" width=30%, height=30%/>
+If the command was executed successfully, you will get a graph like the following in a file named "coverage_result.png".
+<img src="https://github.com/anonymousfse2024/parasuit/assets/150991397/1da78ffb-254b-463f-9257-b0f70a38b6e8" width=30%, height=30%/>
+
 
 ### Bug Finding
 If you want to check information about what bugs ParaSuit has found, run the following command.
 ```bash
-/parasuit/benchmarks $ python3 report_bugs.py --benchmark grep-3.4 ParaSuit
+/parasuit/benchmarks $ python3 report_bugs.py ParaSuit
 ```
 
-If the command is executed successfully, you will get a bug report in a file named "bug_result.txt".
-```bash
-/parasuit/benchmarks $ cat bug_result.txt
-# Example from gcal-4.1
-TestCase : /ParaSuit/iteration-11/test000007.ktest
-Arguments : "./gcal" "   " "   " "@/" "- " "@-" 
-CRASHED signal 11
-File: ../../src/file-io.c
-Line: 740
-```
+If the command was executed successfully, you will get a bug report in a file named "bug_result.txt".
 
 
 ## Usage
@@ -114,13 +105,13 @@ usage: parasuit [-h] [--klee KLEE] [--klee-replay KLEE_REPLAY] [--gcov GCOV] [-p
 ### Hyperparameters
 | Option | Description |
 |:------:|:------------|
-| `-p, --parameter-values` | Path to JSON file that defines parameter spaces |
+| `-p, --parameter-values` | Path to json file that defines parameter spaces |
 | `--iteration-time-budget` | Time budget for each iteration |
 | `--threshold` | Threshold to group parameters into a group in the parameter selection step |
 | `--n-tune` | Number of times each parameter is compared in the parameter selection step |
 | `--clust-range` | Clustering execution cycle at the parameter value sampling stage |
 
-In the JSON file used as the value of --parameter-values, there are two entries: `space` and `defaults`. For `space`, it includes parameters that should be tuned. For `defaults`, it contains parameters whose value must be fixed to a specific value. If you want to use new parameter values in the experiment, edit the defaults section of the JSON file.
+In the json file used as the value of --parameter-values, there are two entries: `space` and `defaults`. For `space`, it includes parameters that should be tuned. For `defaults`, it contains parameters whose value must be fixed to a specific value. If you want to use new parameter values in experiment, edit the defaults section of the json file.
 
 
 ### Required Arguments
@@ -129,6 +120,7 @@ In the JSON file used as the value of --parameter-values, there are two entries:
 | `-t, --budget` | Total time budget of ParaSuit |
 | `llvm_bc` | LLVM bitecode file for klee |
 | `gcov_obj` | Executable with gcov support |
+
 
 ## Usage of Other Programs
 ### /benchmarks/report_bugs.py
@@ -158,12 +150,13 @@ usage: report_coverage.py [-h] [--benchmark STR] [--graph PATH] [--budget TIME] 
 | `--budget`    | Time budget of the coverage graph |
 
 
+
 ## Source Code Structure
-Here are brief descriptions of the files. Some less-important files may be omitted.
+Here are breif descriptions of files. Some less-important files may be omitted.
 ```
 .
 ├── benchmarks                  Testing & reporting directory
-    ├── report_bugs.py          Reporting bug-finding results
+    ├── report_bugs.py          Reporting bug finding results
     └── report_coverage.py      Reporting branch coverage results
 └── parasuit                    Main source code directory
     ├── bin.py                  Entry point of ParaSuit
@@ -173,7 +166,7 @@ Here are brief descriptions of the files. Some less-important files may be omitt
     ├── errcheck.py             Handling parameter values that cause errors
     ├── exechandler.py          Converting parameter values to parameter command format of symbolic executor
     ├── grouping.py             Group parameters and extract representative parameters from each group
-    ├── keyword_filter.py       Removing default or useless parameters from the parameter set
+    ├── keyword_filter.py       Removing default or useless parameters from parameter set
     ├── klee.py                 Running KLEE 
     ├── parameters.py           Including parameters and description of symbolic executor
     ├── paramselect.py          Algorithm of Parameter Selection
@@ -185,3 +178,31 @@ Here are brief descriptions of the files. Some less-important files may be omitt
 ```
 
 
+
+## Accessing Representative Data 
+If you want to access a data about the experiments of ParaSuit, You can download it in the following URL: 
+https://github.com/unknownfse25/parasuit/releases/tag/v1.0
+
+Download following 3 files in the URL
++ expr_result.z01
++ expr_result.z02
++ expr_result.zip
+
+By clicking each file or running following codes on terminal, you can download the data files.
+
+```bash
+$ wget https://github.com/unknownfse25/parasuit/releases/download/v1.0/expr_result.zip \
+https://github.com/unknownfse25/parasuit/releases/download/v1.0/expr_result.z01 \
+https://github.com/unknownfse25/parasuit/releases/download/v1.0/expr_result.z02
+```
+
+Place all the split files (expr_result.z01, expr_result.z02, expr_result.zip) in the same directory. And then, merge the files and unzip it.
+```bash
+$ zip -FF expr_result.zip --out expr_result_merged.zip
+$ unzip expr_result_merged.zip
+```
+
+You can access 3 kinds of data
++ The testcase directories for representative programs such as xorriso, gawk, and grep
++ The coverage data for 12 benchmarks used to generate the main experiment graphs
++ The bugs found by ParaSuit at least once across 5 repetitions.
