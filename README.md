@@ -1,6 +1,6 @@
 # ParaSuit
 
-Enhancing Usability and Performance of Symbolic Execution via Fully Automated Parameter Tuning
+Fully Automated and Program-Adaptive Parameter Tuning for Symbolic Execution
 
 <img src="https://github.com/anonymousfse2024/parasuit/assets/150991397/d405595c-1eb7-4cd9-a100-f30450bf3bb4" width=30%, height=30%/>
 
@@ -9,7 +9,7 @@ Enhancing Usability and Performance of Symbolic Execution via Fully Automated Pa
 ### Build ParaSuit
 First, you have to clone our source code. 
 ```bash
-$ git clone https://github.com/anonymousicse2025/parasuit.git
+$ git clone https://github.com/unknownoopsla2025/parasuit.git
 ```
 
 Second, build ParaSuit with Dockerfile. If you run the command below, ParaSuit and KLEE-2.1 will be built, and a benchmark (grep-3.4) will be installed.
