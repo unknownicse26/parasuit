@@ -152,7 +152,7 @@ usage: report_coverage.py [-h] [--benchmark STR] [--graph PATH] [--budget TIME] 
 
 
 ## Source Code Structure
-Here are breif descriptions of files. Some less-important files may be omitted.
+Here are brief descriptions of the files. Some less important files may be omitted.
 ```
 .
 ├── benchmarks                  Testing & reporting directory
@@ -180,29 +180,29 @@ Here are breif descriptions of files. Some less-important files may be omitted.
 
 
 ## Accessing Representative Data 
-If you want to access a data about the experiments of ParaSuit, You can download it in the following URL: 
-https://github.com/unknownfse25/parasuit/releases/tag/v1.0
+If you want to access data about the experiments of ParaSuit, you can download it at the following URL: 
+https://github.com/unknownoopsla2025/parasuit/releases/tag/v1.0
 
-Download following 3 files in the URL
+Download the following 3 files in the URL
 + expr_result.z01
 + expr_result.z02
 + expr_result.zip
 
-By clicking each file or running following codes on terminal, you can download the data files.
+By clicking each file or running the following codes on the terminal, you can download the data files.
 
 ```bash
-$ wget https://github.com/unknownfse25/parasuit/releases/download/v1.0/expr_result.zip \
-https://github.com/unknownfse25/parasuit/releases/download/v1.0/expr_result.z01 \
-https://github.com/unknownfse25/parasuit/releases/download/v1.0/expr_result.z02
+$ wget https://github.com/unknownoopsla2025/parasuit/releases/download/v1.0/expr_result.zip \
+https://github.com/unknownoopsla2025/parasuit/releases/download/v1.0/expr_result.z01 \
+https://github.com/unknownoopsla2025/parasuit/releases/download/v1.0/expr_result.z02
 ```
 
-Place all the split files (expr_result.z01, expr_result.z02, expr_result.zip) in the same directory. And then, merge the files and unzip it.
+Place all the split files (expr_result.z01, expr_result.z02, expr_result.zip) in the same directory. Then, merge the files and unzip them.
 ```bash
 $ zip -FF expr_result.zip --out expr_result_merged.zip
 $ unzip expr_result_merged.zip
 ```
 
 You can access 3 kinds of data
-+ The testcase directories for representative programs such as xorriso, gawk, and grep
-+ The coverage data for 12 benchmarks used to generate the main experiment graphs
-+ The bugs found by ParaSuit at least once across 5 repetitions.
++ The testcase directories for 5 programs: xorriso, gcal, grep, gawk, and combine.
++ Cumulative branch coverage over time for 12 programs.
++ The bug-finding logs found by ParaSuit at least once across 5 repetitions.
