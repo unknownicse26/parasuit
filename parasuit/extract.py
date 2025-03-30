@@ -144,14 +144,14 @@ class Extractor:
         try:
             result = sp.run(cmd, stdout=sp.PIPE, stderr=sp.PIPE, shell=True, check=True, timeout=int(1.25*iter_budget))
         except sp.TimeoutExpired:
-            print('[WARNING] Symplate : KLEE exceeded the time budget. Iteration terminated.')
+            print('[WARNING] ParaSuit : KLEE exceeded the time budget. Iteration terminated.')
         except sp.CalledProcessError as e:
             stderr = e.stderr.decode(errors='replace')
             lastline = stderr.strip().splitlines()[-1]
             if 'KLEE' in lastline and 'kill(9)' in lastline:
-                print(f'[WARNING] Symplate : KLEE process kill(9)ed. Failed to terminate nicely.')
+                print(f'[WARNING] ParaSuit : KLEE process kill(9)ed. Failed to terminate nicely.')
             else:                
-                print(f'[WARNING] Symplate : Fail({e.returncode})ed to execute KLEE.')
+                print(f'[WARNING] ParaSuit : Fail({e.returncode})ed to execute KLEE.')
         testcases = [f"{running_dir}/iteration-0/{tc}" for tc in os.listdir(f"{running_dir}/iteration-0") if tc.endswith(".ktest")]
         
         return testcases
