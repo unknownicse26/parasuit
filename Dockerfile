@@ -20,7 +20,7 @@ RUN make install
 
 RUN apt-get -y install python3-pip
 RUN pip3 install --upgrade pip
-RUN pip3 install tabulate numpy wllvm scikit-learn
+RUN pip3 install numpy wllvm scikit-learn
 RUN apt-get -y install clang-6.0 llvm-6.0 llvm-6.0-dev llvm-6.0-tools
 RUN ln -s /usr/bin/clang-6.0 /usr/bin/clang
 RUN ln -s /usr/bin/clang++-6.0 /usr/bin/clang++
@@ -75,7 +75,7 @@ RUN echo "export PATH=$PATH:/root/main/klee/build/bin" >> /root/.bashrc
 
 # Install ParaSuit
 WORKDIR ${BASE_DIR}
-RUN git clone https://github.com/anonymousicse2025/parasuit.git
+RUN git clone https://github.com/unknownoopsla2025/parasuit.git
 WORKDIR ${BASE_DIR}/parasuit
 RUN python3 setup.py install
 
