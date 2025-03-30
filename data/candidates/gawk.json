@@ -1,0 +1,432 @@
+{
+    "use-iterative-deepening-time-search": [
+        "true",
+        "true",
+        "true"
+    ],
+    "strip-all": [
+        "true",
+        "true",
+        "true"
+    ],
+    "only-seed": [
+        "true",
+        "true",
+        "true"
+    ],
+    "ignore-solver-failures": [
+        "true",
+        "true",
+        "true"
+    ],
+    "verify-each": [
+        "true",
+        "true",
+        "true"
+    ],
+    "warnings-only-to-file": [
+        "true",
+        "true",
+        "true"
+    ],
+    "batch-time": [
+        "2s",
+        "10s",
+        "8s"
+    ],
+    "exit-on-error": [
+        "true",
+        "true",
+        "true"
+    ],
+    "klee-call-optimisation": [
+        "false",
+        "false",
+        "false"
+    ],
+    "exit-on-error-type": [
+        "Exec",
+        "User",
+        "ReportError"
+    ],
+    "cex-cache-superset": [
+        "true",
+        "true",
+        "true"
+    ],
+    "output-module": [
+        "true",
+        "true",
+        "true"
+    ],
+    "make-concrete-symbolic": [
+        "index",
+        "value",
+        "all"
+    ],
+    "max-sym-array-size": [
+        5,
+        20,
+        12
+    ],
+    "optimize-array": [
+        "index",
+        "value",
+        "all"
+    ],
+    "cex-cache-try-all": [
+        "true",
+        "true",
+        "true"
+    ],
+    "use-fast-cex-solver": [
+        "true",
+        "true",
+        "true"
+    ],
+    "env-file": [
+        "none",
+        "all",
+        "concrete"
+    ],
+    "track-instruction-time": [
+        "true",
+        "true",
+        "true"
+    ],
+    "use-construct-hash-stp": [
+        "false",
+        "false",
+        "false"
+    ],
+    "smtlib-human-readable": [
+        "true",
+        "true",
+        "true"
+    ],
+    "link-llvm-lib": [
+        "none",
+        "all",
+        "concrete"
+    ],
+    "all-external-warnings": [
+        "true",
+        "true",
+        "true"
+    ],
+    "switch-type": [
+        "llvm",
+        "llvm",
+        "llvm"
+    ],
+    "search": [
+        "nurs:cpicnt",
+        "nurs:covnew",
+        "dfs"
+    ],
+    "max-static-fork-pct": [
+        0.0,
+        0.333,
+        0.667
+    ],
+    "allocate-determ-start-address": [
+        50,
+        200,
+        125
+    ],
+    "simplify-sym-indices": [
+        "true",
+        "true",
+        "true"
+    ],
+    "equality-substitution": [
+        "false",
+        "false",
+        "false"
+    ],
+    "use-branch-cache": [
+        "false",
+        "false",
+        "false"
+    ],
+    "use-independent-solver": [
+        "false",
+        "false",
+        "false"
+    ],
+    "batch-instructions": [
+        5000,
+        20000,
+        14409
+    ],
+    "array-value-ratio": [
+        0.0,
+        0.333,
+        0.667
+    ],
+    "output-istats": [
+        "false",
+        "false",
+        "false"
+    ],
+    "max-memory": [
+        1000,
+        4000,
+        3098
+    ],
+    "max-static-solve-pct": [
+        0.0,
+        0.333,
+        0.667
+    ],
+    "allocate-determ": [
+        "true",
+        "true",
+        "true"
+    ],
+    "readable-posix-inputs": [
+        "true",
+        "true",
+        "true"
+    ],
+    "return-null-on-zero-malloc": [
+        "true",
+        "true",
+        "true"
+    ],
+    "run-in-dir": [
+        "llvm",
+        "llvm",
+        "llvm"
+    ],
+    "use-cex-cache": [
+        "false",
+        "false",
+        "false"
+    ],
+    "output-stats": [
+        "false",
+        "false",
+        "false"
+    ],
+    "const-array-opt": [
+        "true",
+        "true",
+        "true"
+    ],
+    "always-output-seeds": [
+        "false",
+        "false",
+        "false"
+    ],
+    "allocate-determ-size": [
+        50,
+        200,
+        125
+    ],
+    "use-constant-arrays": [
+        "false",
+        "false",
+        "false"
+    ],
+    "emit-all-errors": [
+        "true",
+        "true",
+        "true"
+    ],
+    "function-alias": [
+        "nurs:cpicnt",
+        "nurs:covnew",
+        "dfs"
+    ],
+    "max-depth": [
+        2500,
+        10000,
+        7994
+    ],
+    "max-memory-inhibit": [
+        "false",
+        "false",
+        "false"
+    ],
+    "suppress-external-warnings": [
+        "true",
+        "true",
+        "true"
+    ],
+    "solver-backend": [
+        "z3",
+        "dummy",
+        "metasmt"
+    ],
+    "max-solver-time": [
+        "2s",
+        "10s",
+        "8s"
+    ],
+    "disable-inlining": [
+        "true",
+        "true",
+        "true"
+    ],
+    "dump-states-on-halt": [
+        "false",
+        "false",
+        "false"
+    ],
+    "disable-verify": [
+        "true",
+        "true",
+        "true"
+    ],
+    "check-div-zero": [
+        "false",
+        "false",
+        "false"
+    ],
+    "cex-cache-exp": [
+        "true",
+        "true",
+        "true"
+    ],
+    "libcxx": [
+        "true",
+        "true",
+        "true"
+    ],
+    "seed-dir": [
+        "TestGA/iteration-0",
+        "TestGA/iteration-0",
+        "TestGA/iteration-0"
+    ],
+    "array-value-symb-ratio": [
+        0.0,
+        0.333,
+        0.667
+    ],
+    "max-tests": [
+        1000,
+        4000,
+        3098
+    ],
+    "named-seed-matching": [
+        "true",
+        "true",
+        "true"
+    ],
+    "smtlib-abbreviation-mode": [
+        "named",
+        "none",
+        "named"
+    ],
+    "solver-optimize-divides": [
+        "true",
+        "true",
+        "true"
+    ],
+    "seed-time": [
+        "2s",
+        "10s",
+        "8s"
+    ],
+    "check-overshift": [
+        "false",
+        "false",
+        "false"
+    ],
+    "use-visitor-hash": [
+        "false",
+        "false",
+        "false"
+    ],
+    "use-call-paths": [
+        "false",
+        "false",
+        "false"
+    ],
+    "redzone-size": [
+        5,
+        20,
+        12
+    ],
+    "smtlib-display-constants": [
+        "bin",
+        "hex",
+        "hex"
+    ],
+    "max-stack-frames": [
+        4096,
+        16384,
+        4650
+    ],
+    "use-merge": [
+        "true",
+        "true",
+        "true"
+    ],
+    "entry-point": [
+        "z3",
+        "dummy",
+        "metasmt"
+    ],
+    "silent-klee-assume": [
+        "true",
+        "true",
+        "true"
+    ],
+    "output-source": [
+        "false",
+        "false",
+        "false"
+    ],
+    "disable-internalize": [
+        "true",
+        "true",
+        "true"
+    ],
+    "max-instructions": [
+        5000,
+        20000,
+        14409
+    ],
+    "use-forked-solver": [
+        "false",
+        "false",
+        "false"
+    ],
+    "use-incomplete-merge": [
+        "true",
+        "true",
+        "true"
+    ],
+    "use-batching-search": [
+        "true",
+        "true",
+        "true"
+    ],
+    "zero-seed-extension": [
+        "true",
+        "true",
+        "true"
+    ],
+    "max-forks": [
+        4096,
+        16384,
+        4650
+    ],
+    "uncovered-update-interval": [
+        "15s",
+        "60s",
+        "17s"
+    ],
+    "max-static-cpfork-pct": [
+        0.0,
+        0.333,
+        0.667
+    ],
+    "max-static-cpsolve-pct": [
+        0.0,
+        0.333,
+        0.667
+    ]
+}

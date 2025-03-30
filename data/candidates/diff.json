@@ -1,0 +1,432 @@
+{
+    "solver-optimize-divides": [
+        "true",
+        "true",
+        "true"
+    ],
+    "disable-inlining": [
+        "true",
+        "true",
+        "true"
+    ],
+    "verify-each": [
+        "true",
+        "true",
+        "true"
+    ],
+    "max-memory": [
+        1000,
+        4000,
+        3384
+    ],
+    "max-forks": [
+        4096,
+        16384,
+        14685
+    ],
+    "cex-cache-exp": [
+        "true",
+        "true",
+        "true"
+    ],
+    "max-instructions": [
+        5000,
+        20000,
+        6256
+    ],
+    "const-array-opt": [
+        "true",
+        "true",
+        "true"
+    ],
+    "max-sym-array-size": [
+        5,
+        20,
+        13
+    ],
+    "smtlib-human-readable": [
+        "true",
+        "true",
+        "true"
+    ],
+    "switch-type": [
+        "simple",
+        "simple",
+        "simple"
+    ],
+    "make-concrete-symbolic": [
+        "all",
+        "index",
+        "value"
+    ],
+    "search": [
+        "nurs:rp",
+        "nurs:covnew",
+        "nurs:depth"
+    ],
+    "only-seed": [
+        "true",
+        "true",
+        "true"
+    ],
+    "allocate-determ-start-address": [
+        50,
+        200,
+        112
+    ],
+    "use-incomplete-merge": [
+        "true",
+        "true",
+        "true"
+    ],
+    "max-stack-frames": [
+        4096,
+        16384,
+        14685
+    ],
+    "solver-backend": [
+        "stp",
+        "z3",
+        "metasmt"
+    ],
+    "use-iterative-deepening-time-search": [
+        "true",
+        "true",
+        "true"
+    ],
+    "cex-cache-superset": [
+        "true",
+        "true",
+        "true"
+    ],
+    "check-div-zero": [
+        "false",
+        "false",
+        "false"
+    ],
+    "output-stats": [
+        "false",
+        "false",
+        "false"
+    ],
+    "use-constant-arrays": [
+        "false",
+        "false",
+        "false"
+    ],
+    "output-module": [
+        "true",
+        "true",
+        "true"
+    ],
+    "use-batching-search": [
+        "true",
+        "true",
+        "true"
+    ],
+    "max-static-solve-pct": [
+        0.0,
+        0.333,
+        0.667
+    ],
+    "entry-point": [
+        "stp",
+        "z3",
+        "metasmt"
+    ],
+    "silent-klee-assume": [
+        "true",
+        "true",
+        "true"
+    ],
+    "smtlib-display-constants": [
+        "hex",
+        "bin",
+        "hex"
+    ],
+    "array-value-ratio": [
+        0.0,
+        0.333,
+        0.667
+    ],
+    "max-static-cpfork-pct": [
+        0.0,
+        0.333,
+        0.667
+    ],
+    "function-alias": [
+        "nurs:rp",
+        "nurs:covnew",
+        "nurs:depth"
+    ],
+    "max-depth": [
+        2500,
+        10000,
+        8238
+    ],
+    "use-independent-solver": [
+        "false",
+        "false",
+        "false"
+    ],
+    "track-instruction-time": [
+        "true",
+        "true",
+        "true"
+    ],
+    "env-file": [
+        "concrete",
+        "all",
+        "none"
+    ],
+    "run-in-dir": [
+        "simple",
+        "simple",
+        "simple"
+    ],
+    "max-memory-inhibit": [
+        "false",
+        "false",
+        "false"
+    ],
+    "output-istats": [
+        "false",
+        "false",
+        "false"
+    ],
+    "batch-time": [
+        "2s",
+        "10s",
+        "7s"
+    ],
+    "simplify-sym-indices": [
+        "true",
+        "true",
+        "true"
+    ],
+    "smtlib-abbreviation-mode": [
+        "none",
+        "none",
+        "none"
+    ],
+    "use-merge": [
+        "true",
+        "true",
+        "true"
+    ],
+    "strip-all": [
+        "true",
+        "true",
+        "true"
+    ],
+    "return-null-on-zero-malloc": [
+        "true",
+        "true",
+        "true"
+    ],
+    "disable-internalize": [
+        "true",
+        "true",
+        "true"
+    ],
+    "allocate-determ-size": [
+        50,
+        200,
+        112
+    ],
+    "all-external-warnings": [
+        "true",
+        "true",
+        "true"
+    ],
+    "libcxx": [
+        "true",
+        "true",
+        "true"
+    ],
+    "ignore-solver-failures": [
+        "true",
+        "true",
+        "true"
+    ],
+    "equality-substitution": [
+        "false",
+        "false",
+        "false"
+    ],
+    "use-forked-solver": [
+        "false",
+        "false",
+        "false"
+    ],
+    "array-value-symb-ratio": [
+        0.0,
+        0.333,
+        0.667
+    ],
+    "zero-seed-extension": [
+        "true",
+        "true",
+        "true"
+    ],
+    "uncovered-update-interval": [
+        "15s",
+        "60s",
+        "18s"
+    ],
+    "use-fast-cex-solver": [
+        "true",
+        "true",
+        "true"
+    ],
+    "readable-posix-inputs": [
+        "true",
+        "true",
+        "true"
+    ],
+    "max-tests": [
+        1000,
+        4000,
+        3384
+    ],
+    "check-overshift": [
+        "false",
+        "false",
+        "false"
+    ],
+    "link-llvm-lib": [
+        "concrete",
+        "all",
+        "none"
+    ],
+    "always-output-seeds": [
+        "false",
+        "false",
+        "false"
+    ],
+    "use-cex-cache": [
+        "false",
+        "false",
+        "false"
+    ],
+    "max-static-cpsolve-pct": [
+        0.0,
+        0.333,
+        0.667
+    ],
+    "warnings-only-to-file": [
+        "true",
+        "true",
+        "true"
+    ],
+    "seed-dir": [
+        "TestDI1/iteration-0",
+        "TestDI1/iteration-0",
+        "TestDI1/iteration-0"
+    ],
+    "max-solver-time": [
+        "2s",
+        "10s",
+        "7s"
+    ],
+    "named-seed-matching": [
+        "true",
+        "true",
+        "true"
+    ],
+    "exit-on-error-type": [
+        "External",
+        "Unhandled",
+        "Overflow"
+    ],
+    "seed-time": [
+        "2s",
+        "10s",
+        "7s"
+    ],
+    "disable-verify": [
+        "true",
+        "true",
+        "true"
+    ],
+    "emit-all-errors": [
+        "true",
+        "true",
+        "true"
+    ],
+    "suppress-external-warnings": [
+        "true",
+        "true",
+        "true"
+    ],
+    "use-branch-cache": [
+        "false",
+        "false",
+        "false"
+    ],
+    "allocate-determ": [
+        "true",
+        "true",
+        "true"
+    ],
+    "klee-call-optimisation": [
+        "false",
+        "false",
+        "false"
+    ],
+    "use-construct-hash-stp": [
+        "false",
+        "false",
+        "false"
+    ],
+    "max-static-fork-pct": [
+        0.0,
+        0.333,
+        0.667
+    ],
+    "cex-cache-try-all": [
+        "true",
+        "true",
+        "true"
+    ],
+    "batch-instructions": [
+        5000,
+        20000,
+        6256
+    ],
+    "output-source": [
+        "false",
+        "false",
+        "false"
+    ],
+    "exit-on-error": [
+        "true",
+        "true",
+        "true"
+    ],
+    "dump-states-on-halt": [
+        "false",
+        "false",
+        "false"
+    ],
+    "optimize-array": [
+        "all",
+        "index",
+        "value"
+    ],
+    "use-call-paths": [
+        "false",
+        "false",
+        "false"
+    ],
+    "use-visitor-hash": [
+        "false",
+        "false",
+        "false"
+    ],
+    "redzone-size": [
+        5,
+        20,
+        13
+    ]
+}
