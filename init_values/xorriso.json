@@ -1,0 +1,17 @@
+{
+    "simplify-sym-indices": "true",
+    "output-module": "true",
+    "max-memory": 1000,
+    "use-forked-solver": "true",
+    "use-cex-cache": "true",
+    "max-sym-array-size": 4096,
+    "max-solver-time": "30s",
+    "max-memory-inhibit": "false",
+    "max-static-fork-pct": 1.0,
+    "max-static-solve-pct": 1.0,
+    "max-static-cpfork-pct": 1.0,
+    "switch-type": "internal",
+    "search": "random-path",
+    "use-batching-search": "true",
+    "batch-instructions": 10000
+}
