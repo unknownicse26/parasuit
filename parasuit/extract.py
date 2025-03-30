@@ -173,7 +173,7 @@ class Extractor:
             else:
                 opt_cmd = f"{opt_cmd} {key}={value}"
 
-        opt_cmd = f"{opt_cmd} -write-depth-info -max-time={iter_budget} -output-dir={running_dir}/iteration-{iter}"
+        opt_cmd = f"{opt_cmd} -max-time={iter_budget} -output-dir={running_dir}/iteration-{iter}"
 
         if "-sym-arg" in parameters.keys():
             sym_cmd = f"{sym_cmd} -sym-arg {parameters['-sym-arg']}"
