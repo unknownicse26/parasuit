@@ -35,13 +35,13 @@ def main(argv=None):
     # Hyperparameters
     hyperparameters = parser.add_argument_group('hyperparameters')
     hyperparameters.add_argument('-p', '--parameter-values', default="parameters.json", type=str, metavar='JSON',
-                                 help='Json file defining parameter values')
+                                 help='Initial parameter set for tuning symbolic execution (default=OSDI'08 Coreutils Experiments)')
     hyperparameters.add_argument('--iteration-time-budget', default=120, type=int, metavar='INT',
                                  help='Time budget for each iteration (default=120)')
     hyperparameters.add_argument('--threshold', default=0.7, type=float, metavar='FLOAT',
-                                 help='Threshold to group parameters into a group in the parameter selection step (default=0.6 -> 60 Groups)')
+                                 help='Minimum silhouette score required to sample values using the exploit policy (default=0.7)')
     hyperparameters.add_argument('--n-trial', default=3, type=int, metavar='INT',
-                                 help='Number of times each parameter is compared in the parameter selection step (default=3)')
+                                 help='Number of times each parameter is tried in the extraction step (default=3)')
 
     # Others
     parser.add_argument('-d', '--output-dir', default='ParaSuit', type=str,
