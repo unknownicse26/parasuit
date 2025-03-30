@@ -7,7 +7,7 @@ Using ParaSuit, you can install 12 benchmarks
 | combine   | 0.4.0 | gawk      | 5.1.0  | nano         | 4.9   |
 | diff      | 3.7   | gcal      | 4.1    | sed          | 4.8   |
 | du        | 8.32  | grep      | 3.4    | trueprint    | 5.4   |
-| enscript  | 1.6.6 | ls        | 8.32   | xxorriso     | 1.5.2 |
+| enscript  | 1.6.6 | ls        | 8.32   | xorriso     | 1.5.2 |
 
 ## Install Benchmarks
 To install a benchmark to test, use the following command.
