@@ -10,7 +10,7 @@ Using ParaSuit, you can install 12 benchmarks
 | enscript  | 1.6.6 | ls        | 8.32   | xxorriso     | 1.5.2 |
 
 ## Install Benchmarks
-To install a benchmark to test, use following command.
+To install a benchmark to test, use the following command.
 ```
 # Example for grep-3.4
 /parasuit/benchmarks$ bash building_benchmark.sh grep-3.4
@@ -21,40 +21,25 @@ If you want to install multiple benchmarks, you can simply list benchmarks.
 /parasuit/benchmarks$ bash building_benchmark.sh grep-3.4 gcal-4.1 gawk-5.1.0 ...
 ```
 
-And if you want to install all 12 benchmarks, just run the following command.
+If you want to install all 12 benchmarks, just run the following command.
 ```
 /parasuit/benchmarks$ bash building_benchmark.sh all
 ```
 
-Finally, if you want to install multiple core for a benchmark, use '--n-objs' option.
+Finally, if you want to install multiple cores for a benchmark, use '--n-objs' option.
 ```
 /parasuit/benchmarks$ bash building_benchmark.sh --n-objs 10 grep-3.4
 ```
 
 ## Run ParaSuit
 ### Testing Benchmarks
-After the installation is ended, you can run ParaSuit with that benchmark. For more information about running ParaSuit, you can access to README.md file in the parent directory (/parasuit).
+After the installation is complete, you can run ParaSuit with that benchmark. For more information about running ParaSuit, you can access the README.md file in the parent directory (/parasuit).
 
 ```bash
 /parasuit/benchmarks $ parasuit -t 43200 -p initial_values.json -d ParaSuit grep-3.4/obj-llvm/src/grep.bc grep-3.4/obj-gcov/src/grep
 ```
 Format : parasuit -t <time_budget> -p <json_file> -d <output_dir> <path_to_bc_file(llvm)> <path_to_exec_file(gcov)>
 
-### Initial Parameter Values
-ParaSuit provides two versions of initial parameter values.
-| JSON file | Explanation | 
-|:------:|:------------|
-| initial_values.json   | Since most researches using KLEE use the parameter values on the [KLEE website](https://klee-se.org/docs/coreutils-experiments/), ParaSuit also basically uses the same values as initial parameter values. |
-| optimal.json      | This file only includes parameters frequently selected as the minimal parameter values, which is crucial for the symbolic execution tool to function correctly, were defined. Using these parameter values, you can shorten the time in the process of extracting minimum parameter values. | 
-
-If you want to use something other than the two initial parameter values presented by ParaSuit, you can modify the JSON file.
-+ To define symbolic parameters, input the parameter and its value into the 'space' dictionary within the JSON file.
-    + Symbolic parameter : -sym-arg, -sym-files, -sym-stdin
-    + If your initial parameter values use sym-args rather than sym-arg, define '"-sym-arg": [[MIN, MIN+1, ... , MAX-1, MAX], N]'
-    + -sym-args [MIN] [MAX] [N] : Replace by at least MIN arguments and at most MAX arguments, each with maximum length N.
-+ To define parameters other than symbolic parameters, enter the parameter and its value in the 'default' dictionary in the JSON file.
-    + If you want to express "true" value in JSON file, you can also use 'null'.
-+ If you want to use seeding, add '"-seed-file": [[], 1]' to the space dictionary.
 
 ## Analyzing Results
 ### Branch Coverage
@@ -64,7 +49,7 @@ When the experiment is completed, ParaSuit provides a line graph showing how man
 usage: report_coverage.py [-h] [--benchmark STR] [--graph PATH] [--budget TIME] [DIRS ...]
 ```
 
-If you want to return multiple results in a single graph, just list the names of the directories such as:
+If you want to return multiple results in a single graph, just list the names of the directories, such as:
 ```
 /parasuit/benchmarks$ python3 report_coverage.py --benchmark grep-3.4 ParaSuit KLEEdefault ...
 ```
@@ -75,7 +60,7 @@ ParaSuit also provides the "report_bugs.py" program to extract test-cases that c
 /parasuit/benchmarks$ python3 report_bugs.py --benchmark grep-3.4 ParaSuit
 ```
 
-Similar to branch coverage, bug-finding also allows you to search multiple directories at once, by simply listing the directories.
+Similar to branch coverage, bug-finding also allows you to search multiple directories at once by simply listing the directories.
 
 ```
 /parasuit/benchmarks$ python3 report_bugs.py --benchmark grep-3.4 ParaSuit KLEEdefault ...
@@ -84,7 +69,7 @@ Similar to branch coverage, bug-finding also allows you to search multiple direc
 ★ Caution: Multiple directories must all be tested against the same benchmark.
 
 
-### Options of Reporting Programs
+### Options for Reporting Programs
 + /benchmarks/report_coverage.py
 
 | Option | Description |
