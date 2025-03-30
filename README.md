@@ -24,7 +24,7 @@ Third, connect to Docker using the command below. The command will take you to a
 ```
 
 ### Run ParaSuit
-Finally, you can run ParaSuit with the following code. (e.g., grep-3.4) We provide the optimal parameter set provided by [KLEE](https://klee-se.org/docs/coreutils-experiments/) as initial parameter values.
+Finally, you can run ParaSuit with the following code. (e.g., grep-3.4)
 ```bash
 /parasuit/benchmarks $ parasuit -t 3600 -d ParaSuit grep-3.4/obj-llvm/src/grep.bc grep-3.4/obj-gcov/src/grep
 ```
