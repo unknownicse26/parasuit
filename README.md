@@ -177,13 +177,13 @@ If you want to access data about the experiments of ParaSuit, you can download i
 https://github.com/unknownoopsla2025/parasuit/releases/tag/v1.0
 
 Download the following file in the URL
-+ expr_result.zip
++ parasuit_experiments.zip
 
 By clicking file or running the following codes on the terminal, you can download the data files.
 
 ```bash
 $ wget https://github.com/unknownoopsla2025/parasuit/releases/download/v1.0/parasuit_experiments.zip
-$ unzip expr_result_merged.zip
+$ unzip parasuit_experiments.zip
 ```
 
 You can access 3 kinds of data
