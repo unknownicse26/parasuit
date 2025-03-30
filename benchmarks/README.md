@@ -36,9 +36,9 @@ Finally, if you want to install multiple cores for a benchmark, use '--n-objs' o
 After the installation is complete, you can run ParaSuit with that benchmark. For more information about running ParaSuit, you can access the README.md file in the parent directory (/parasuit).
 
 ```bash
-/parasuit/benchmarks $ parasuit -t 43200 -p initial_values.json -d ParaSuit grep-3.4/obj-llvm/src/grep.bc grep-3.4/obj-gcov/src/grep
+/parasuit/benchmarks $ parasuit -t 3600 -d ParaSuit grep-3.4/obj-llvm/src/grep.bc grep-3.4/obj-gcov/src/grep
 ```
-Format : parasuit -t <time_budget> -p <json_file> -d <output_dir> <path_to_bc_file(llvm)> <path_to_exec_file(gcov)>
+Format : parasuit -t <time_budget> -d <output_dir> <path_to_bc_file(llvm)> <path_to_exec_file(gcov)>
 
 
 ## Analyzing Results
@@ -51,7 +51,7 @@ usage: report_coverage.py [-h] [--benchmark STR] [--graph PATH] [--budget TIME] 
 
 If you want to return multiple results in a single graph, just list the names of the directories, such as:
 ```
-/parasuit/benchmarks$ python3 report_coverage.py --benchmark grep-3.4 ParaSuit KLEEdefault ...
+/parasuit/benchmarks$ python3 report_coverage.py --benchmark grep-3.4 ParaSuit ParaSuit1 ...
 ```
 
 ### Bug-Finding
@@ -63,7 +63,7 @@ ParaSuit also provides the "report_bugs.py" program to extract test-cases that c
 Similar to branch coverage, bug-finding also allows you to search multiple directories at once by simply listing the directories.
 
 ```
-/parasuit/benchmarks$ python3 report_bugs.py --benchmark grep-3.4 ParaSuit KLEEdefault ...
+/parasuit/benchmarks$ python3 report_bugs.py --benchmark grep-3.4 ParaSuit ParaSuit2 ...
 ```
 
 ★ Caution: Multiple directories must all be tested against the same benchmark.
