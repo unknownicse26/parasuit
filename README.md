@@ -24,7 +24,7 @@ Third, connect to Docker using the command below. The command will take you to a
 ```
 
 ### Run ParaSuit
-Finally, you can run ParaSuit with following code. (e.g. grep-3.4) We provide the optimal parameter set provided by [KLEE](https://klee-se.org/docs/coreutils-experiments/) as initial parameter values.
+Finally, you can run ParaSuit with the following code. (e.g., grep-3.4) We provide the optimal parameter set provided by [KLEE](https://klee-se.org/docs/coreutils-experiments/) as initial parameter values.
 ```bash
 /parasuit/benchmarks $ parasuit -t 3600 -d ParaSuit grep-3.4/obj-llvm/src/grep.bc grep-3.4/obj-gcov/src/grep
 ```
@@ -34,26 +34,26 @@ Format : parasuit -t <time_budget> -d <output_dir> <path_to_bc_file(llvm)> <path
 
 If data for the target program exists, you will see logs as follows.
 ```bash
-[INFO] ParaSuit : Coverage will be recoreded at "ParaSuit/coverage.csv" at every iteration.
+[INFO] ParaSuit : Coverage will be recorded at "ParaSuit/coverage.csv" at every iteration.
 [INFO] ParaSuit : Loading parameter selection data.
 [INFO] ParaSuit : All configuration loaded. Start testing.
-[INFO] ParaSuit : Iteration: 1 Total budget: 3600 Time Elapsed: 153 Coverage: 1698 Iteration Coverage: 1513
+[INFO] ParaSuit : Iteration: 1 Total budget: 3600 Time Elapsed: 153 Coverage: 1698 Iteration Coverage: 1698
 ```
 
 Otherwise, the following log will be observed.
 ```bash
-[INFO] ParaSuit : Coverage will be recoreded at "ParaSuit/coverage.csv" at every iteration.
-[INFO] ParaSuit : Selected ParaSuit. Parameters will be tuned.
+[INFO] ParaSuit : Coverage will be recorded at "ParaSuit/coverage.csv" at every iteration.
+[INFO] ParaSuit : Extracting parameter selection data.
 [INFO] ParaSuit : All configuration loaded. Start testing.
-[INFO] ParaSuit : Iteration: 1 Iteration budget: 30 Total budget: 43200 Time Elapsed: 42 Coverage: 1364
+[INFO] ParaSuit : Iteration: 1 Total budget: 3600 Time Elapsed: 127 Coverage: 978 Iteration Coverage: 978
 ```
 
-When time bugdet expired without error, you can see the following output.
+When the time budget expires without error, you can see the following output.
 ```bash
-[INFO] ParaSuit : Iteration: 367 Iteration budget: 120 Total budget: 43200 Time Elapsed: 43065 Coverage: 879
-[INFO] ParaSuit : Iteration: 368 Iteration budget: 120 Total budget: 43200 Time Elapsed: 43069 Coverage: 879
-[INFO] ParaSuit : Iteration: 369 Iteration budget: 120 Total budget: 43200 Time Elapsed: 43234 Coverage: 879
-[INFO] ParaSuit : ParaSuit done. Achieve 879 coverage
+[INFO] ParaSuit : Iteration: 25 Total budget: 3600 Time Elapsed: 3385 Coverage: 2596 Iteration Coverage: 1272
+[INFO] ParaSuit : Iteration: 26 Total budget: 3600 Time Elapsed: 3451 Coverage: 2604 Iteration Coverage: 1610
+[INFO] ParaSuit : Iteration: 27 Total budget: 3600 Time Elapsed: 3601 Coverage: 2768 Iteration Coverage: 1842
+[INFO] ParaSuit : ParaSuit done. Achieve 2768 coverage
 ```
 
 
@@ -65,11 +65,11 @@ If you want to get results about how many branches ParaSuit has covered, run the
 ```
 
 If the command was executed successfully, you will get a graph like the following in a file named "coverage_result.png".
-<img src="https://github.com/anonymousfse2024/parasuit/assets/150991397/1da78ffb-254b-463f-9257-b0f70a38b6e8" width=30%, height=30%/>
+![coverage_result](https://github.com/user-attachments/assets/b6ae9b8d-8122-44cf-b5fd-b8de30b5d4c4)
 
 
 ### Bug Finding
-If you want to check information about what bugs ParaSuit has found, run the following command.
+If you want to check information about the bugs ParaSuit has found, run the following command.
 ```bash
 /parasuit/benchmarks $ python3 report_bugs.py ParaSuit
 ```
@@ -172,7 +172,7 @@ Here are brief descriptions of the files. Some less important files may be omitt
 
 
 
-## Accessing Representative Data 
+## Accessing Experimental Results 
 If you want to access data about the experiments of ParaSuit, you can download it at the following URL: 
 https://github.com/unknownoopsla2025/parasuit/releases/tag/v1.0
 
