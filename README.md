@@ -108,7 +108,7 @@ usage: parasuit [-h] [--klee KLEE] [--klee-replay KLEE_REPLAY] [--gcov GCOV] [-p
 | `-p, --parameter-values` | Initial parameter set for tuning symbolic execution (default: [Coreutils Experiments](https://klee-se.org/docs/coreutils-experiments/)) |
 | `--iteration-time-budget` | Time budget for each iteration |
 | `--threshold` | Minimum silhouette score required to sample values using the exploit policy |
-| `--n-tune` | Number of times each parameter is tried in the extraction step |
+| `--n-trial` | Number of times each parameter is tried in the extraction step |
 
 
 ### Required Arguments
