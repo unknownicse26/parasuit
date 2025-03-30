@@ -35,7 +35,7 @@ def main(argv=None):
     # Hyperparameters
     hyperparameters = parser.add_argument_group('hyperparameters')
     hyperparameters.add_argument('-p', '--parameter-values', default="parameters.json", type=str, metavar='JSON',
-                                 help='Initial parameter set for tuning symbolic execution (default=OSDI'08 Coreutils Experiments)')
+                                 help='Initial parameter set for tuning symbolic execution (default=OSDI_08 Coreutils Experiments)')
     hyperparameters.add_argument('--iteration-time-budget', default=120, type=int, metavar='INT',
                                  help='Time budget for each iteration (default=120)')
     hyperparameters.add_argument('--threshold', default=0.7, type=float, metavar='FLOAT',
