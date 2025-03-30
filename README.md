@@ -37,7 +37,7 @@ If data for the target program exists, you will see logs as follows.
 [INFO] ParaSuit : Coverage will be recoreded at "ParaSuit/coverage.csv" at every iteration.
 [INFO] ParaSuit : Loading parameter selection data.
 [INFO] ParaSuit : All configuration loaded. Start testing.
-[INFO] ParaSuit : Iteration: 1 Total budget: 10800 Time Elapsed: 153 Coverage: 1698 Iteration Coverage: 1513
+[INFO] ParaSuit : Iteration: 1 Total budget: 3600 Time Elapsed: 153 Coverage: 1698 Iteration Coverage: 1513
 ```
 
 Otherwise, the following log will be observed.
@@ -50,8 +50,6 @@ Otherwise, the following log will be observed.
 
 When time bugdet expired without error, you can see the following output.
 ```bash
-[INFO] ParaSuit : Iteration: 365 Iteration budget: 120 Total budget: 43200 Time Elapsed: 42747 Coverage: 879
-[INFO] ParaSuit : Iteration: 366 Iteration budget: 120 Total budget: 43200 Time Elapsed: 42912 Coverage: 879
 [INFO] ParaSuit : Iteration: 367 Iteration budget: 120 Total budget: 43200 Time Elapsed: 43065 Coverage: 879
 [INFO] ParaSuit : Iteration: 368 Iteration budget: 120 Total budget: 43200 Time Elapsed: 43069 Coverage: 879
 [INFO] ParaSuit : Iteration: 369 Iteration budget: 120 Total budget: 43200 Time Elapsed: 43234 Coverage: 879
