@@ -279,7 +279,7 @@ class Sampler:
                 sampled_values[param] = self.sym_init_values[param]
             else:
                 try:
-                    policy = self.try_cluster(param, self.sym_type[param])
+                    policy = self.try_cluster(param, self.sym_type[param], trials, threshold)
                 except:
                     policy = "explore" 
                 if policy == "explore":
@@ -296,7 +296,7 @@ class Sampler:
                 sampled_values[param] = self.initial_values[param]
             else:
                 try:
-                    policy = self.try_cluster(param, self.opt_types[param])
+                    policy = self.try_cluster(param, self.opt_types[param], trials, threshold)
                 except:
                     policy = "explore"
                 if policy == "explore":
