@@ -9,7 +9,7 @@ Fully Automated and Program-Adaptive Parameter Tuning for Symbolic Execution
 ### Build ParaSuit
 First, you have to clone our source code. 
 ```bash
-$ git clone https://github.com/unknownoopsla2025/parasuit.git
+$ git clone https://github.com/unknownicse26/parasuit.git
 ```
 
 Second, build ParaSuit with Dockerfile. If you run the command below, ParaSuit and KLEE-2.1 will be built, and a benchmark (grep-3.4) will be installed.
