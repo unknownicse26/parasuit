@@ -7,7 +7,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-// Replaced klee/lib/Core//ExecutionState.cpp
+// Replaced klee/lib/Core/ExecutionState.cpp
 
 #include "Memory.h"
 
