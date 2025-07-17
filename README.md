@@ -183,5 +183,5 @@ $ unzip parasuit_experiments.zip
 
 You can access 3 kinds of data
 + The testcase directories for 5 programs: xorriso, gcal, grep, gawk, and combine.
-+ Cumulative branch coverage within a 24-hour budget.
++ Cumulative coverage within a 24-hour budget and independent branch coverage for each iteration.
 + The bug-finding logs found by ParaSuit at least once across 5 repetitions.
