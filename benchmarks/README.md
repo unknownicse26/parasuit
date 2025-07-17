@@ -66,7 +66,7 @@ Similar to branch coverage, bug-finding also allows you to search multiple direc
 /parasuit/benchmarks$ python3 report_bugs.py --benchmark grep-3.4 ParaSuit ParaSuit2 ...
 ```
 
-★ Caution: Multiple directories must all be tested against the same benchmark.
+★ Caution: Multiple directories must all target the same benchmark.
 
 
 ### Options for Reporting Programs
