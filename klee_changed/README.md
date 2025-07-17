@@ -1,4 +1,4 @@
-# ParaSuit - Benchmarks
+# ParaSuit - Change Codes of KLEE
 
 To run ParaSuit, you have to modify the following three files in KLEE-2.1.
 
