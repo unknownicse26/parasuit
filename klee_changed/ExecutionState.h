@@ -7,8 +7,6 @@
 //
 //===----------------------------------------------------------------------===//
 
-// Replaced klee/include/klee/ExecutionState.h
-
 #ifndef KLEE_EXECUTIONSTATE_H
 #define KLEE_EXECUTIONSTATE_H
 
@@ -135,6 +133,8 @@ public:
   //
   // FIXME: Move to a shared list structure (not critical).
   std::vector<std::pair<ref<const MemoryObject>, const Array *>> symbolics;
+
+  std::vector<ref<Expr>> forkedConstraints;
 
   /// @brief Set of used array names for this state.  Used to avoid collisions.
   std::set<std::string> arrayNames;
