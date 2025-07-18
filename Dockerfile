@@ -27,7 +27,6 @@ RUN ln -s /usr/bin/clang++-6.0 /usr/bin/clang++
 RUN ln -s /usr/bin/llvm-config-6.0 /usr/bin/llvm-config
 RUN ln -s /usr/bin/llvm-link-6.0 /usr/bin/llvm-link
 
-
 WORKDIR /root
 
 # Install ParaSuit
@@ -52,38 +51,38 @@ RUN echo "ulimit -s unlimited" >> /root/.bashrc
 
 
 # install Klee-uclibc
-WORKDIR ${BASE_DIR}
+WORKDIR ${BASE_DIR}/parasuit
 RUN git clone https://github.com/klee/klee-uclibc.git
-WORKDIR ${BASE_DIR}/klee-uclibc
+WORKDIR ${BASE_DIR}/parasuit/klee-uclibc
 RUN chmod 777 -R *
 RUN ./configure --make-llvm-lib
 RUN make -j2
 
 
 # Install KLEE-2.1
-WORKDIR ${BASE_DIR}
+WORKDIR ${BASE_DIR}/parasuit
 RUN pip install lit
 RUN git clone -b 2.1.x https://github.com/klee/klee.git
 
 ## Replace KLEE to modified codes.
-RUN mv ${BASE_DIR}/parasuit/klee_changed/Executor.cpp ${BASE_DIR}/klee/lib/Core/Executor.cpp
-RUN mv ${BASE_DIR}/parasuit/klee_changed/ExecutionState.cpp ${BASE_DIR}/klee/lib/Core/ExecutionState.cpp
-RUN mv ${BASE_DIR}/parasuit/klee_changed/ExecutionState.h ${BASE_DIR}/klee/include/klee/ExecutionState.h
+RUN mv ${BASE_DIR}/parasuit/klee_changed/Executor.cpp ${BASE_DIR}/parasuit/klee/lib/Core/Executor.cpp
+RUN mv ${BASE_DIR}/parasuit/klee_changed/ExecutionState.cpp ${BASE_DIR}/parasuit/klee/lib/Core/ExecutionState.cpp
+RUN mv ${BASE_DIR}/parasuit/klee_changed/ExecutionState.h ${BASE_DIR}/parasuit/klee/include/klee/ExecutionState.h
 
 RUN chmod 777 -R *
 RUN curl -OL https://github.com/google/googletest/archive/release-1.7.0.zip
 RUN unzip release-1.7.0.zip
-WORKDIR ${BASE_DIR}/klee
+WORKDIR ${BASE_DIR}/parasuit/klee
 RUN echo "export LLVM_COMPILER=clang" >> /root/.bashrc
 RUN echo "export WLLVM_COMPILER=clang" >> /root/.bashrc
 RUN echo "KLEE_REPLAY_TIMEOUT=1" >> /root/.bashrc
 RUN mkdir build
-WORKDIR ${BASE_DIR}/klee/build
-RUN cmake -DENABLE_SOLVER_STP=ON -DENABLE_POSIX_RUNTIME=ON -DENABLE_KLEE_UCLIBC=ON -DKLEE_UCLIBC_PATH=${BASE_DIR}/klee-uclibc -DENABLE_UNIT_TESTS=ON -DGTEST_SRC_DIR=${BASE_DIR}/googletest-release-1.7.0 -DLLVM_CONFIG_BINARY=/usr/bin/llvm-config-6.0 -DLLVMCC=/usr/bin/clang-6.0 -DLLVMCXX=/usr/bin/clang++-6.0 ${BASE_DIR}/klee
+WORKDIR ${BASE_DIR}/parasuit/klee/build
+RUN cmake -DENABLE_SOLVER_STP=ON -DENABLE_POSIX_RUNTIME=ON -DENABLE_KLEE_UCLIBC=ON -DKLEE_UCLIBC_PATH=${BASE_DIR}/parasuit/klee-uclibc -DENABLE_UNIT_TESTS=ON -DGTEST_SRC_DIR=${BASE_DIR}/parasuit/googletest-release-1.7.0 -DLLVM_CONFIG_BINARY=/usr/bin/llvm-config-6.0 -DLLVMCC=/usr/bin/clang-6.0 -DLLVMCXX=/usr/bin/clang++-6.0 ${BASE_DIR}/parasuit/klee
 RUN make
-WORKDIR ${BASE_DIR}/klee
+WORKDIR ${BASE_DIR}/parasuit/klee
 RUN env -i /bin/bash -c '(source testing-env.sh; env > test.env)'
-RUN echo "export PATH=$PATH:/root/main/klee/build/bin" >> /root/.bashrc
+RUN echo "export PATH=$PATH:/root/main/parasuit/klee/build/bin" >> /root/.bashrc
 
 # Install Benchmarks (e.g. grep-3.4)
 WORKDIR ${BASE_DIR}/parasuit/benchmarks
