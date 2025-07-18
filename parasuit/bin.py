@@ -94,7 +94,7 @@ def main(argv=None):
     seed_data = dict()
     fixed_params = dict()
     data = list()
-    tool_params = {"threshold" : args.threshold, "num_params" : args.iteration_budget}
+    tool_params = {"threshold" : args.threshold, "num_params" : 20}
     elapsed = 0
     i = 1
 
