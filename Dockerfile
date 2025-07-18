@@ -30,6 +30,12 @@ RUN ln -s /usr/bin/llvm-link-6.0 /usr/bin/llvm-link
 
 WORKDIR /root
 
+# Install ParaSuit
+WORKDIR ${BASE_DIR}
+RUN git clone https://github.com/unknownicse26/parasuit.git
+WORKDIR ${BASE_DIR}/parasuit
+RUN python3 setup.py install
+
 # Install stp solver
 RUN apt-get -y install cmake bison flex libboost-all-dev python perl minisat
 WORKDIR ${BASE_DIR}
@@ -58,6 +64,12 @@ RUN make -j2
 WORKDIR ${BASE_DIR}
 RUN pip install lit
 RUN git clone -b 2.1.x https://github.com/klee/klee.git
+
+## Replace KLEE to modified codes.
+RUN mv ${BASE_DIR}/parasuit/klee_changed/Executor.cpp ${BASE_DIR}/klee/lib/Core/Executor.cpp
+RUN mv ${BASE_DIR}/parasuit/klee_changed/ExecutionState.cpp ${BASE_DIR}/klee/lib/Core/ExecutionState.cpp
+RUN mv ${BASE_DIR}/parasuit/klee_changed/ExecutionState.h ${BASE_DIR}/klee/include/klee/ExecutionState.h
+
 RUN chmod 777 -R *
 RUN curl -OL https://github.com/google/googletest/archive/release-1.7.0.zip
 RUN unzip release-1.7.0.zip
@@ -72,12 +84,6 @@ RUN make
 WORKDIR ${BASE_DIR}/klee
 RUN env -i /bin/bash -c '(source testing-env.sh; env > test.env)'
 RUN echo "export PATH=$PATH:/root/main/klee/build/bin" >> /root/.bashrc
-
-# Install ParaSuit
-WORKDIR ${BASE_DIR}
-RUN git clone https://github.com/unknownoopsla2025/parasuit.git
-WORKDIR ${BASE_DIR}/parasuit
-RUN python3 setup.py install
 
 # Install Benchmarks (e.g. grep-3.4)
 WORKDIR ${BASE_DIR}/parasuit/benchmarks
