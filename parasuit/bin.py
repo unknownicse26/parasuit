@@ -40,9 +40,9 @@ def main(argv=None):
     hyperparameters.add_argument('-p', '--parameter-values', default="parameters.json", type=str, metavar='JSON',
                                  help='Initial parameter set for tuning symbolic execution (default=OSDI_08 Coreutils Experiments)')
     hyperparameters.add_argument('--iteration-time-budget', default=120, type=int, metavar='INT',
-                                 help='Initial time budget for each iteration (default=120)')
+                                 help='Time budget for each iteration (default=120)')
     hyperparameters.add_argument('--threshold', default=0.7, type=float, metavar='FLOAT',
-                                 help='Initial threshold of silhouette score required to proceed exploit policy (default=0.7)')
+                                 help='Threshold to group parameters into a group in the parameter selection step (default=0.6 -> 60 Groups)')
 
     # Others
     parser.add_argument('-d', '--output-dir', default='ParaSuit', type=str,
@@ -93,6 +93,7 @@ def main(argv=None):
     sampled_values = dict()
     seed_data = dict()
     tool_params = {"threshold" : 0.7, "num_params" : 20}
+    fixed_params = dict()
     elapsed = 0
     data = list()
     i = 1
@@ -124,8 +125,9 @@ def main(argv=None):
             fixed_params = json.load(f)
     else:
         while (len(other_opts) > 0):
-            other_opts, fixed_params, testcases = extractor.minimize(other_opts, fixed_params, args.llvm_bc, f"{running_dir}/{args.output_dir}", args.iteration_time_budget, i, args.gcov)
-            os.system(f"rm -rf {running_dir}/{args.output_dir}/iteration-{i}")
+            cand_params = copy.deepcopy(init_params)
+            other_opts, cand_params, fixed_params, testcases = extractor.minimize(other_opts, cand_params, fixed_params, args.llvm_bc, f"{running_dir}/{args.output_dir}", args.iteration_time_budget, i, args.gcov)
+            shutil.rmtree(f"{running_dir}/{args.output_dir}/iteration-{i}", ignore_errors=True)
         with open(f"{running_dir}/../data/fixed_params/{pgm}.json", 'w', encoding='utf-8') as f:
             json.dump(fixed_params, f, ensure_ascii=False, indent=4)
     option_data = {key : value for key, value in option_data.items() if (key not in [p.strip('-') for p in fixed_params.keys()]) or (key in symb_params)}
@@ -202,7 +204,8 @@ def main(argv=None):
         with open(f"{running_dir}/../data/baseline_data/{pgm}.json", "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=4) 
     option_data, covered_branches, param_score = analyzer.load_init_data(option_data, data, [key.lstrip("-") for key in init_params.keys() if key.lstrip("-") not in symb_params], coverage_iter)
-    sampler = Sampler(pgm, f"{running_dir}/{args.output_dir}", args.iteration_time_budget, enable_selects, fixed_parameter_values, symb_params, option_data)
+    sampler = Sampler(pgm, f"{running_dir}/{args.output_dir}", args.iteration_time_budget, enable_selects, fixed_parameter_values, symb_params, option_data)      # value_sample / value_sample_random
+    # sampler = Sampler(f"{running_dir}/{args.output_dir}", args.iteration_time_budget, enable_selects, fixed_parameter_values, symb_params, option_data)             # value_sample_ml / value_sample_symtuner
     print('[INFO] ParaSuit : All configuration loaded. Start testing.')
 
     # Iterative Stages
@@ -259,5 +262,7 @@ def main(argv=None):
         i += 1
 
     print(f'[INFO] ParaSuit : ParaSuit done. Achieve {len(coverage)} coverage.')
+
+
 
 
