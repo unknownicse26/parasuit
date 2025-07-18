@@ -1,0 +1,326 @@
+{
+    "make-concrete-symbolic": [
+        "index",
+        "value",
+        "all"
+    ],
+    "array-value-symb-ratio": [
+        0.0
+    ],
+    "output-module": [
+        "false"
+    ],
+    "max-static-fork-pct": [
+        0.0
+    ],
+    "function-alias": [
+        "nurs:covnew",
+        "random-state",
+        "dfs",
+        "nurs:icnt",
+        "bfs",
+        "nurs:qc",
+        "nurs:rp",
+        "nurs:depth",
+        "nurs:cpicnt",
+        "nurs:md2u",
+        "random-path"
+    ],
+    "const-array-opt": [
+        "true"
+    ],
+    "use-constant-arrays": [
+        "false"
+    ],
+    "max-instructions": [
+        5000
+    ],
+    "use-batching-search": [
+        "false"
+    ],
+    "solver-backend": [
+        "z3",
+        "dummy",
+        "stp",
+        "metasmt"
+    ],
+    "entry-point": [
+        "z3",
+        "dummy",
+        "stp",
+        "metasmt"
+    ],
+    "return-null-on-zero-malloc": [
+        "true"
+    ],
+    "simplify-sym-indices": [
+        "false"
+    ],
+    "seed-dir": [
+        "TestGR/iteration-0"
+    ],
+    "check-div-zero": [
+        "false"
+    ],
+    "array-value-ratio": [
+        0.0
+    ],
+    "disable-internalize": [
+        "true"
+    ],
+    "max-memory": [
+        500
+    ],
+    "check-overshift": [
+        "false"
+    ],
+    "search": [
+        "nurs:covnew",
+        "random-state",
+        "dfs",
+        "nurs:icnt",
+        "bfs",
+        "nurs:qc",
+        "nurs:rp",
+        "nurs:depth",
+        "nurs:cpicnt",
+        "nurs:md2u",
+        "random-path"
+    ],
+    "disable-verify": [
+        "true"
+    ],
+    "exit-on-error-type": [
+        "ReadOnly",
+        "Model",
+        "Exec",
+        "Overflow",
+        "Ptr",
+        "ReportError",
+        "Assert",
+        "External",
+        "User",
+        "Abort",
+        "Free",
+        "BadVectorAccess",
+        "Unhandled"
+    ],
+    "max-sym-array-size": [
+        2048
+    ],
+    "seed-time": [
+        "2s"
+    ],
+    "max-depth": [
+        4096
+    ],
+    "use-incomplete-merge": [
+        "true"
+    ],
+    "verify-each": [
+        "true"
+    ],
+    "allocate-determ-start-address": [
+        50
+    ],
+    "use-fast-cex-solver": [
+        "true"
+    ],
+    "env-file": [
+        "nurs:covnew",
+        "random-state",
+        "dfs",
+        "nurs:icnt",
+        "bfs",
+        "nurs:qc",
+        "nurs:rp",
+        "nurs:depth",
+        "nurs:cpicnt",
+        "nurs:md2u",
+        "random-path"
+    ],
+    "only-seed": [
+        "true"
+    ],
+    "track-instruction-time": [
+        "true"
+    ],
+    "max-forks": [
+        4096
+    ],
+    "cex-cache-superset": [
+        "true"
+    ],
+    "strip-all": [
+        "true"
+    ],
+    "max-solver-time": [
+        "15s"
+    ],
+    "cex-cache-exp": [
+        "true"
+    ],
+    "smtlib-abbreviation-mode": [
+        "named",
+        "none"
+    ],
+    "use-call-paths": [
+        "false"
+    ],
+    "use-iterative-deepening-time-search": [
+        "true"
+    ],
+    "max-static-cpfork-pct": [
+        0.0
+    ],
+    "smtlib-display-constants": [
+        "hex",
+        "bin"
+    ],
+    "klee-call-optimisation": [
+        "false"
+    ],
+    "use-merge": [
+        "true"
+    ],
+    "max-tests": [
+        500
+    ],
+    "uncovered-update-interval": [
+        "15s"
+    ],
+    "switch-type": [
+        "simple",
+        "llvm"
+    ],
+    "dump-states-on-halt": [
+        "false"
+    ],
+    "run-in-dir": [
+        "simple",
+        "llvm"
+    ],
+    "all-external-warnings": [
+        "true"
+    ],
+    "max-memory-inhibit": [
+        "true"
+    ],
+    "libcxx": [
+        "true"
+    ],
+    "suppress-external-warnings": [
+        "true"
+    ],
+    "disable-inlining": [
+        "false"
+    ],
+    "max-static-solve-pct": [
+        0.0
+    ],
+    "allocate-determ-size": [
+        50
+    ],
+    "solver-optimize-divides": [
+        "true"
+    ],
+    "always-output-seeds": [
+        "false"
+    ],
+    "use-branch-cache": [
+        "false"
+    ],
+    "optimize-array": [
+        "index",
+        "value",
+        "all"
+    ],
+    "use-forked-solver": [
+        "false"
+    ],
+    "redzone-size": [
+        5
+    ],
+    "use-construct-hash-stp": [
+        "false"
+    ],
+    "exit-on-error": [
+        "true"
+    ],
+    "readable-posix-inputs": [
+        "true"
+    ],
+    "allocate-determ": [
+        "true"
+    ],
+    "cex-cache-try-all": [
+        "true"
+    ],
+    "batch-time": [
+        "2s"
+    ],
+    "batch-instructions": [
+        5000
+    ],
+    "output-istats": [
+        "false"
+    ],
+    "max-static-cpsolve-pct": [
+        0.0
+    ],
+    "max-stack-frames": [
+        4096
+    ],
+    "smtlib-human-readable": [
+        "true"
+    ],
+    "link-llvm-lib": [
+        "nurs:covnew",
+        "random-state",
+        "dfs",
+        "nurs:icnt",
+        "bfs",
+        "nurs:qc",
+        "nurs:rp",
+        "nurs:depth",
+        "nurs:cpicnt",
+        "nurs:md2u",
+        "random-path"
+    ],
+    "equality-substitution": [
+        "false"
+    ],
+    "ignore-solver-failures": [
+        "true"
+    ],
+    "use-independent-solver": [
+        "false"
+    ],
+    "zero-seed-extension": [
+        "true"
+    ],
+    "warnings-only-to-file": [
+        "true"
+    ],
+    "output-source": [
+        "false"
+    ],
+    "use-visitor-hash": [
+        "false"
+    ],
+    "silent-klee-assume": [
+        "true"
+    ],
+    "use-cex-cache": [
+        "false"
+    ],
+    "emit-all-errors": [
+        "true"
+    ],
+    "named-seed-matching": [
+        "true"
+    ],
+    "output-stats": [
+        "false"
+    ]
+}
