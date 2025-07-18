@@ -224,7 +224,7 @@ class KLEEReplay:
             try:
                 _, stderr = process.communicate(timeout=0.1)
             except sp.TimeoutExpired:
-                print(f'[WARNING] SEvolve : KLEE replay timeout: {testcase}')
+                print(f'[WARNING] ParaSuit : KLEE replay timeout: {testcase}')
             finally:
                 process.kill()
 
@@ -302,8 +302,6 @@ class Evaluator:
                 try:
                     score = 0
                     for const in consts:
-                        print(const)
-                        print(const_score[const])
                         score += const_score[const]
                     tc_score[tc.replace(".const", ".ktest")] = score
                 except:
