@@ -3,11 +3,10 @@
 This directory stores information about previously tested programs.
 In this directory, five types of data are collected for each target program:
 
-+ candidates              Store the used values during trials in the Extraction stage
-+ covered_branches        Store the branch log covered when each candidate value is used
++ baseline_data           Store the branch log covered when each candidate value is used
++ candidates              Store the used values during the Extraction stage
++ fixed_params            Store the minimal parameter set required for KLEE to run for each program
 + init_values             Store the initial value of each selected parameter for value sampling
-+ min_parameters          Store the minimal parameter set required for KLEE to run for each program
-+ param_scores            Store the score of each parameter from the most recent iteration
 
 For target programs without existing data, ParaSuit automatically stores the five types of data in their respective directories after testing is complete.
 By default, we include data for the following 12 target programs:
