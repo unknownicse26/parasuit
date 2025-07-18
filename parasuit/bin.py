@@ -93,8 +93,9 @@ def main(argv=None):
     sampled_values = dict()
     seed_data = dict()
     fixed_params = dict()
-    elapsed = 0
     data = list()
+    tool_params = {"threshold" : args.threshold, "num_params" : args.iteration_budget}
+    elapsed = 0
     i = 1
 
     extractor = Extractor(args.gcov_depth, args.gcov_obj, args.klee, args.klee_replay, home_directory)
@@ -203,8 +204,7 @@ def main(argv=None):
         with open(f"{running_dir}/../data/baseline_data/{pgm}.json", "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=4) 
     option_data, covered_branches, param_score = analyzer.load_init_data(option_data, data, [key.lstrip("-") for key in init_params.keys() if key.lstrip("-") not in symb_params], coverage_iter)
-    sampler = Sampler(pgm, f"{running_dir}/{args.output_dir}", args.iteration_time_budget, enable_selects, fixed_parameter_values, symb_params, option_data)      # value_sample / value_sample_random
-    # sampler = Sampler(f"{running_dir}/{args.output_dir}", args.iteration_time_budget, enable_selects, fixed_parameter_values, symb_params, option_data)             # value_sample_ml / value_sample_symtuner
+    sampler = Sampler(pgm, f"{running_dir}/{args.output_dir}", args.iteration_time_budget, enable_selects, fixed_parameter_values, symb_params, option_data, tool_params)
     print('[INFO] ParaSuit : All configuration loaded. Start testing.')
 
     # Iterative Stages
