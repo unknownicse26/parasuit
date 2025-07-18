@@ -92,7 +92,6 @@ def main(argv=None):
     coverage_log = dict()
     sampled_values = dict()
     seed_data = dict()
-    tool_params = {"threshold" : 0.7, "num_params" : 20}
     fixed_params = dict()
     elapsed = 0
     data = list()
