@@ -10,7 +10,7 @@ from sklearn.metrics import silhouette_score
 
 
 class Sampler:
-    def __init__(self, pgm, running_dir, iteration_budget, initial_values, min_parameters, symb_params, option_data):
+    def __init__(self, pgm, running_dir, iteration_budget, initial_values, min_parameters, symb_params, option_data, tool_params):
         self.pgm = pgm
         self.running_dir = running_dir
         self.iteration_budget = iteration_budget
@@ -57,7 +57,7 @@ class Sampler:
         self.covered_data = {key : [] for key in list(self.opt_types.keys()) + list(self.sym_init_values.keys())}
 
         self.other_param_data = {key : [] for key in ["threshold", "num_params"]}
-        self.other_defaults = {"threshold" : 0.9, "num_params" : 20}
+        self.other_defaults = tool_params
 
 
     def divide_types(self, key, value):
